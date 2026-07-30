@@ -1,0 +1,22 @@
+{
+  "name": "Haliloxo Live Studio",
+  "short_name": "Haliloxo",
+  "description": "Windows canlı yayın üretim uygulaması",
+  "lang": "tr-TR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060d19",
+  "theme_color": "#07101f",
+  "icons": [
+    {
+      "src": "/assets/oxo-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/oxo-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
