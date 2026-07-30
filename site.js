@@ -4,6 +4,7 @@ const releaseEndpoint =
   "https://api.github.com/repos/haliloxox/haliloxostudio/releases/latest";
 const fallbackDownload =
   "https://github.com/haliloxox/haliloxostudio/releases/download/v1.0.12/Haliloxo-Live-Studio-Setup-1.0.12.exe";
+let resolvedInstallerUrl = fallbackDownload;
 
 const formatMegabytes = (bytes) => `${Math.round(bytes / 1024 / 1024)} MB`;
 
@@ -22,20 +23,36 @@ async function hydrateLatestRelease() {
     if (!installer?.browser_download_url) return;
 
     const version = String(release.tag_name || "v1.0.12");
-    document.querySelectorAll("[data-download-link]").forEach((link) => {
-      link.href = installer.browser_download_url;
-    });
+    resolvedInstallerUrl = installer.browser_download_url;
     document.querySelectorAll("[data-version]").forEach((node) => {
       node.textContent = version;
     });
     document.querySelectorAll("[data-file-size]").forEach((node) => {
       node.textContent = formatMegabytes(installer.size);
     });
-  } catch (_) {
-    document.querySelectorAll("[data-download-link]").forEach((link) => {
-      if (!link.href) link.href = fallbackDownload;
+  } catch (_) {}
+}
+
+function setupInstallerDownload(releaseRequest) {
+  document.querySelectorAll("[data-installer-download]").forEach((trigger) => {
+    let busy = false;
+    trigger.addEventListener("click", async (event) => {
+      event.preventDefault();
+      if (busy) return;
+
+      busy = true;
+      trigger.setAttribute("aria-busy", "true");
+      try {
+        await releaseRequest;
+        window.location.assign(resolvedInstallerUrl);
+      } finally {
+        setTimeout(() => {
+          busy = false;
+          trigger.removeAttribute("aria-busy");
+        }, 1200);
+      }
     });
-  }
+  });
 }
 
 function setupNavigation() {
@@ -660,7 +677,8 @@ function setupRiotFlowDemo() {
   schedule();
 }
 
-hydrateLatestRelease();
+const latestReleaseRequest = hydrateLatestRelease();
+setupInstallerDownload(latestReleaseRequest);
 setupNavigation();
 setupHeader();
 setupReveal();
