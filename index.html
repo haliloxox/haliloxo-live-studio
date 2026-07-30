@@ -572,6 +572,167 @@
       </div>
     </section>
 
+    <section class="visual-story riot-story" id="valorant-flow" aria-labelledby="riot-title" data-riot-demo>
+      <header class="visual-story__heading">
+        <span>06</span>
+        <div>
+          <p>RIOT / VALORANT ENTEGRASYONU</p>
+          <h2 id="riot-title">Hesabın bağlanır.<br>Tamamlanan maçın yayına dönüşür.</h2>
+        </div>
+      </header>
+
+      <div class="riot-flow-demo">
+        <div class="riot-flow-demo__topline">
+          <div>
+            <span class="riot-demo-badge">KAMUYA AÇIK DEMO</span>
+            <strong>VALORANT maç sonucu akışı</strong>
+            <small>RSO / OAuth ile açık kullanıcı onayı</small>
+          </div>
+          <p><i></i>Ücretsiz ve tüm kullanıcılara eşit erişim</p>
+        </div>
+
+        <ol class="riot-flow-steps" aria-label="VALORANT entegrasyonu kullanıcı akışı">
+          <li class="is-active" data-riot-step="0">
+            <button type="button" aria-label="1. adımı göster">
+              <b>01</b><span>Riot hesabını bağla</span><small>RSO / OAuth</small>
+            </button>
+          </li>
+          <li data-riot-step="1">
+            <button type="button" aria-label="2. adımı göster">
+              <b>02</b><span>Açık izin ver</span><small>Veri paylaşımı</small>
+            </button>
+          </li>
+          <li data-riot-step="2">
+            <button type="button" aria-label="3. adımı göster">
+              <b>03</b><span>Son maçları gör</span><small>Tamamlanmış maçlar</small>
+            </button>
+          </li>
+          <li data-riot-step="3">
+            <button type="button" aria-label="4. adımı göster">
+              <b>04</b><span>Yayına ekle</span><small>Sonuç kartı</small>
+            </button>
+          </li>
+        </ol>
+
+        <div class="riot-flow-stage">
+          <article class="riot-flow-panel riot-connect-panel is-active" data-riot-panel="0">
+            <div class="riot-panel-copy">
+              <span class="riot-panel-kicker">1 · GÜVENLİ BAĞLANTI</span>
+              <h3>Riot hesabını bağla</h3>
+              <p>Giriş, Riot’un resmi RSO / OAuth ekranında yapılır. Haliloxo Live Studio Riot parolanı görmez ve saklamaz.</p>
+              <button type="button" tabindex="-1"><i>R</i>Riot hesabıyla devam et <b>→</b></button>
+              <small>Bu düğme görsel demodur; gerçek oturum açma işlemi başlatmaz.</small>
+            </div>
+            <div class="riot-auth-window" aria-hidden="true">
+              <header><i></i><span>Güvenli Riot bağlantısı</span><b>×</b></header>
+              <div class="riot-auth-mark">R</div>
+              <strong>Haliloxo Live Studio</strong>
+              <p>Riot hesabına bağlanmak istiyor</p>
+              <span class="riot-auth-address">auth.riotgames.com</span>
+              <i class="riot-auth-scan"></i>
+            </div>
+          </article>
+
+          <article class="riot-flow-panel riot-consent-panel" data-riot-panel="1">
+            <div class="riot-panel-copy">
+              <span class="riot-panel-kicker">2 · AÇIK KULLANICI ONAYI</span>
+              <h3>Hangi verinin paylaşılacağını sen seçersin</h3>
+              <p>Veriler yalnızca açık izinden sonra alınır. İzin Riot hesabı üzerinden geri çekilebilir.</p>
+              <div class="riot-consent-notice"><i>!</i><span><b>Veri paylaşımı uyarısı</b>İzin vermeden hiçbir kişisel maç verisi çekilmez.</span></div>
+            </div>
+            <div class="riot-permission-card">
+              <header><span>İSTENEN İZİNLER</span><b>3 açık onay</b></header>
+              <label><i class="checked">✓</i><span><strong>Temel Riot profili</strong><small>Riot ID ve hesap kimliği</small></span></label>
+              <label><i class="checked">✓</i><span><strong>Tamamlanmış maç geçmişi</strong><small>Sonuç, ajan, harita ve K/D/A</small></span></label>
+              <label><i class="checked">✓</i><span><strong>Yayın widget’ında gösterim</strong><small>Yalnızca kullanıcının seçtiği tamamlanmış maç kartı</small></span></label>
+              <p><i>✓</i>Canlı maç verisi veya gizli oyuncu bilgisi istenmez.</p>
+              <button type="button" tabindex="-1">İzin ver ve devam et</button>
+            </div>
+          </article>
+
+          <article class="riot-flow-panel riot-matches-panel" data-riot-panel="2">
+            <div class="riot-panel-copy">
+              <span class="riot-panel-kicker">3 · TAMAMLANMIŞ MAÇLAR</span>
+              <h3>Yalnızca biten maçların sonucu</h3>
+              <p>Kendi hesabının tamamlanmış maçları; sonuç, skor, ajan, harita ve K/D/A bilgileriyle listelenir.</p>
+              <div class="riot-player-chip"><i>NX</i><span><strong>NovaX#TR1</strong><small>Bağlı Riot hesabı · demo</small></span><b>BAĞLI</b></div>
+            </div>
+            <div class="riot-match-list" aria-label="Kurgusal tamamlanmış maç örnekleri">
+              <article class="victory">
+                <span><b>ZAFER</b><small>TAMAMLANDI</small></span>
+                <div><i>J</i><p><strong>Jett · Ascent</strong><small>Rekabetçi · 38 dk.</small></p></div>
+                <p class="riot-kda"><small>K / D / A</small><strong>24 / 14 / 7</strong></p>
+                <em>13 : 9</em>
+              </article>
+              <article>
+                <span><b>MAĞLUBİYET</b><small>TAMAMLANDI</small></span>
+                <div><i>O</i><p><strong>Omen · Bind</strong><small>Rekabetçi · 42 dk.</small></p></div>
+                <p class="riot-kda"><small>K / D / A</small><strong>18 / 17 / 9</strong></p>
+                <em>11 : 13</em>
+              </article>
+              <article class="victory">
+                <span><b>ZAFER</b><small>TAMAMLANDI</small></span>
+                <div><i>S</i><p><strong>Sova · Haven</strong><small>Rekabetçi · 35 dk.</small></p></div>
+                <p class="riot-kda"><small>K / D / A</small><strong>17 / 11 / 12</strong></p>
+                <em>13 : 7</em>
+              </article>
+            </div>
+          </article>
+
+          <article class="riot-flow-panel riot-widget-panel" data-riot-panel="3">
+            <div class="riot-panel-copy">
+              <span class="riot-panel-kicker">4 · YAYIN SONUÇ KARTI</span>
+              <h3>Tamamlanan maçı yayın widget’ına ekle</h3>
+              <p>Yayıncı, kendi son maç kartını yayın sahnesine ekler. Kart yalnızca sonuçlandıktan sonra güncellenir.</p>
+              <button class="riot-add-widget" type="button" tabindex="-1"><i>＋</i>Yayın widget’ına ekle</button>
+            </div>
+            <div class="riot-scene-preview" aria-label="Kurgusal yayın sonuç kartı önizlemesi">
+              <header><span>YAYIN ÖNİZLEMESİ</span><b>16:9</b></header>
+              <div class="riot-scene-grid"></div>
+              <div class="riot-result-widget">
+                <span class="riot-result-agent">J</span>
+                <div><small>SON TAMAMLANAN MAÇ</small><strong>ZAFER <i>13 : 9</i></strong><p>Jett · Ascent</p></div>
+                <p><small>K / D / A</small><strong>24 / 14 / 7</strong></p>
+              </div>
+              <span class="riot-widget-anchor one"></span><span class="riot-widget-anchor two"></span>
+              <span class="riot-widget-anchor three"></span><span class="riot-widget-anchor four"></span>
+            </div>
+          </article>
+        </div>
+
+        <div class="riot-flow-disclosure">
+          <p><strong>Görsel demo</strong> Bu akış kurgusal hesap ve maç verileriyle hazırlanmıştır; gerçek Riot verisi göstermez.</p>
+          <p><strong>Rekabet bütünlüğü</strong> Devam eden maç verisi, oyuncu/rakip scouting, gizli MMR/ELO, mağaza takibi, giriş otomasyonu veya gerçek zamanlı avantaj sunmaz.</p>
+          <p><strong>Eşit erişim</strong> Riot / VALORANT bağlantılı özellikler ücretsizdir ve tüm kullanıcılara aynı koşullarda açıktır.</p>
+        </div>
+
+        <div class="riot-data-control">
+          <span><b>05</b>HESAP VE VERİ KONTROLÜ</span>
+          <div>
+            <strong>Bağlantıyı kaldır ve verilerini sil</strong>
+            <small>Riot bağlantısı kaldırıldığında erişim sonlandırılır; uygulamadaki Riot profil ve geçici tamamlanmış maç verileri silinir.</small>
+          </div>
+          <button type="button" tabindex="-1">Bağlantıyı kaldır</button>
+          <button class="danger" type="button" tabindex="-1">Riot verilerimi sil</button>
+        </div>
+
+        <div class="riot-acknowledgements" aria-label="Riot entegrasyonu uygunluk taahhütleri">
+          <span>UYUMLULUK TAAHHÜTLERİ</span>
+          <ul>
+            <li><i>✓</i>Açık kullanıcı onayı</li>
+            <li><i>✓</i>Parola saklanmaz</li>
+            <li><i>✓</i>Yalnız izin verilen veri</li>
+            <li><i>✓</i>Yalnız tamamlanmış maçlar</li>
+            <li><i>✓</i>Canlı rakip analizi yok</li>
+            <li><i>✓</i>MMR, mağaza ve giriş otomasyonu yok</li>
+            <li><i>✓</i>Ücretsiz ve eşit erişim</li>
+          </ul>
+        </div>
+
+        <small class="riot-legal-note" lang="en">Haliloxo Live Studio isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</small>
+      </div>
+    </section>
+
     <section class="visual-final">
       <div class="visual-final__mark"><img src="/assets/oxo-logo-512.png" alt=""></div>
       <p>HAZIRSAN</p>

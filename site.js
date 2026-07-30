@@ -576,6 +576,90 @@ function setupGiftSpecialAnimationDemo() {
   });
 }
 
+function setupRiotFlowDemo() {
+  const section = document.querySelector("[data-riot-demo]");
+  const stepList = section?.querySelector(".riot-flow-steps");
+  const steps = [...(section?.querySelectorAll("[data-riot-step]") || [])];
+  const panels = [...(section?.querySelectorAll("[data-riot-panel]") || [])];
+  if (!section || !stepList || !steps.length || steps.length !== panels.length) return;
+
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  let activeIndex = 0;
+  let timer = null;
+  let visible = false;
+  let paused = false;
+
+  const clearTimer = () => {
+    if (timer !== null) clearTimeout(timer);
+    timer = null;
+  };
+
+  const activate = (nextIndex) => {
+    activeIndex = (Number(nextIndex) + steps.length) % steps.length;
+    stepList.style.setProperty("--riot-step", String(activeIndex));
+    steps.forEach((step, index) => {
+      const active = index === activeIndex;
+      step.classList.toggle("is-active", active);
+      step.querySelector("button")?.setAttribute("aria-current", active ? "step" : "false");
+    });
+    panels.forEach((panel, index) => {
+      panel.classList.toggle("is-active", index === activeIndex);
+      panel.setAttribute("aria-hidden", String(index !== activeIndex));
+    });
+  };
+
+  const schedule = () => {
+    clearTimer();
+    if (!visible || paused || reduceMotion || document.hidden) return;
+    timer = setTimeout(() => {
+      activate(activeIndex + 1);
+      schedule();
+    }, 3400);
+  };
+
+  steps.forEach((step, index) => {
+    step.querySelector("button")?.addEventListener("click", () => {
+      activate(index);
+      schedule();
+    });
+  });
+
+  section.addEventListener("pointerenter", () => {
+    paused = true;
+    clearTimer();
+  });
+  section.addEventListener("pointerleave", () => {
+    paused = false;
+    schedule();
+  });
+  section.addEventListener("focusin", () => {
+    paused = true;
+    clearTimer();
+  });
+  section.addEventListener("focusout", (event) => {
+    if (section.contains(event.relatedTarget)) return;
+    paused = false;
+    schedule();
+  });
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visible = Boolean(entry?.isIntersecting);
+        schedule();
+      },
+      { threshold: .12, rootMargin: "120px 0px" },
+    );
+    observer.observe(section);
+  } else {
+    visible = true;
+  }
+
+  document.addEventListener("visibilitychange", schedule);
+  activate(0);
+  schedule();
+}
+
 hydrateLatestRelease();
 setupNavigation();
 setupHeader();
@@ -585,3 +669,4 @@ setupContentProtection();
 setupLowerDemoSpectrum();
 setupShowcaseMusicDemo();
 setupGiftSpecialAnimationDemo();
+setupRiotFlowDemo();
