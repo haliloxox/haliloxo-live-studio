@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Haliloxo Live Studio | Windows Canlı Yayın Programı</title>
-  <meta name="description" content="TikTok LIVE ve RTMP yayınlarını; canlı sohbet, hediyeler, TTS, müzik ve etkileşimli widget'larla yöneten Windows yayın programı.">
+  <meta name="description" content="TikTok LIVE ve RTMP yayınlarını; gerçek zamanlı sohbet, hediyeler, TTS, müzik, görsel efektler ve etkileşimli yayın araçlarıyla tek merkezden yönetin.">
   <meta name="google-site-verification" content="RvjmIOsWvns-GgUV0p76bBZyhZAxVbRVnE9HUHZESic">
-  <meta name="theme-color" content="#050a12">
+  <meta name="theme-color" content="#070910">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://haliloxo.com/">
   <link rel="alternate" hreflang="tr" href="https://haliloxo.com/">
@@ -14,11 +14,13 @@
   <link rel="icon" href="/assets/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="preload" href="/assets/oxo-logo-512.png" as="image">
+  <link rel="stylesheet" href="/styles.css?v=20260731-4">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
   <meta property="og:site_name" content="Haliloxo Live Studio">
-  <meta property="og:title" content="Haliloxo Live Studio | Yayınını göster">
+  <meta property="og:title" content="Haliloxo Live Studio | Yayınını canlandır">
   <meta property="og:description" content="Sohbeti, hediyeleri, TTS'yi, müziği ve yayın sahneni canlı yönet.">
   <meta property="og:url" content="https://haliloxo.com/">
   <meta property="og:image" content="https://haliloxo.com/assets/haliloxo-live-studio-og.jpg">
@@ -27,8 +29,9 @@
   <meta property="og:image:alt" content="Haliloxo Live Studio canlı yayın üretim aracı">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Haliloxo Live Studio">
-  <meta name="twitter:description" content="Yayınını göster. Anlatma.">
+  <meta name="twitter:description" content="Yayınını canlandır.">
   <meta name="twitter:image" content="https://haliloxo.com/assets/haliloxo-live-studio-og.jpg">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +49,7 @@
         "@id": "https://haliloxo.com/#organization",
         "name": "Haliloxo Live Studio",
         "url": "https://haliloxo.com/",
+        "email": "haliloxox@gmail.com",
         "logo": {
           "@type": "ImageObject",
           "url": "https://haliloxo.com/assets/oxo-logo-512.png",
@@ -58,27 +62,40 @@
         "@id": "https://haliloxo.com/#software",
         "name": "Haliloxo Live Studio",
         "url": "https://haliloxo.com/",
-        "downloadUrl": "https://haliloxo.com/indir",
-        "softwareVersion": "1.0.12",
         "operatingSystem": "Windows 10, Windows 11",
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Live Streaming Software",
         "inLanguage": "tr-TR",
-        "fileSize": "149 MB",
         "author": {"@id": "https://haliloxo.com/#organization"},
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Premium 7 Gün",
+            "price": "350",
+            "priceCurrency": "TRY",
+            "availability": "https://schema.org/PreOrder"
+          },
+          {
+            "@type": "Offer",
+            "name": "Premium 1 Ay",
+            "price": "1500",
+            "priceCurrency": "TRY",
+            "availability": "https://schema.org/PreOrder"
+          }
+        ],
         "featureList": [
-          "TikTok LIVE bağlantısı",
-          "RTMP canlı yayın",
+          "TikTok LIVE ve RTMP bağlantısı",
           "Canlı sohbet ve hediyeler",
           "TTS ve müzik ses kısma",
-          "Yayın widget'ları ve tetikler"
+          "Yayın widget'ları ve tetikler",
+          "Etkileşimli yayın oyunları"
         ]
       }
     ]
   }
   </script>
 </head>
-<body class="visual-home">
+<body class="home">
   <a class="skip-link" href="#main">İçeriğe geç</a>
 
   <header class="site-header" data-header>
@@ -87,688 +104,244 @@
         <img src="/assets/oxo-logo-192.png" width="42" height="42" alt="">
         <span class="brand-copy"><strong>Haliloxo</strong><small>Live Studio</small></span>
       </a>
+
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-nav-toggle>
         <span></span><span></span><span></span><span class="sr-only">Menüyü aç</span>
       </button>
+
       <nav class="main-nav" id="main-nav" aria-label="Ana menü" data-nav>
-        <a href="/#neden">Neden Haliloxo?</a>
+        <a href="#tanitim">Tanıtım</a>
+        <a href="#neden">Neden Haliloxo?</a>
+        <a href="#fiyatlandirma">Fiyatlandırma</a>
         <a href="/ozellikler/">Özellikler</a>
-        <a href="/destek/">Destek</a>
-        <a class="nav-download" href="/indir/">İndir</a>
+        <button class="nav-download" type="button" data-installer-download>
+          <span>İndir</span>
+          <small data-version>Windows</small>
+        </button>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="visual-hero" aria-labelledby="hero-title">
-      <div class="visual-hero__grid">
-        <aside class="requirements-panel">
-          <p class="visual-kicker">WINDOWS İÇİN</p>
-          <h1 id="hero-title">Program<br>gereksinimleri</h1>
-
-          <div class="requirement-list" aria-label="Haliloxo Live Studio sistem gereksinimleri">
-            <article>
-              <span>01</span>
-              <div><small>İŞLETİM SİSTEMİ</small><strong>Windows 10 / 11</strong><em>64-bit</em></div>
-            </article>
-            <article>
-              <span>02</span>
-              <div><small>BELLEK</small><strong>8 GB RAM</strong><em>16 GB önerilir</em></div>
-            </article>
-            <article>
-              <span>03</span>
-              <div><small>İŞLEMCİ</small><strong>4 çekirdek</strong><em>6 çekirdek önerilir</em></div>
-            </article>
-            <article>
-              <span>04</span>
-              <div><small>GRAFİK</small><strong>DirectX 11</strong><em>Donanım kodlama önerilir</em></div>
-            </article>
-            <article>
-              <span>05</span>
-              <div><small>İNTERNET</small><strong>10 Mbps upload</strong><em>20 Mbps+ önerilir</em></div>
-            </article>
-          </div>
-
-          <a class="requirements-link" href="/indir/">Kurulum ayrıntıları <span>→</span></a>
-        </aside>
-
-        <div class="brand-download">
-          <div class="brand-download__halo" aria-hidden="true"></div>
-          <img class="hero-logo" src="/assets/oxo-logo-512.png" width="320" height="320" alt="Haliloxo Live Studio">
-          <p>HALİLOXO <span>LIVE STUDIO</span></p>
-          <a class="visual-download" href="/indir/">
-            <span class="visual-download__icon" aria-hidden="true">↓</span>
-            <span><strong>İndir</strong><small>Windows · <b data-version>v1.0.12</b></small></span>
-          </a>
-          <span class="download-size" data-file-size>149 MB</span>
+    <section class="hero shell" id="tanitim" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Windows yayın stüdyosu</p>
+        <h1 id="hero-title">Yayınını<br><em>canlandır.</em></h1>
+        <p class="hero-lead">Sohbet, hediyeler, müzik, TTS, görsel efektler ve etkileşimli yayın araçları aynı sahnede, birbiriyle uyum içinde çalışır.</p>
+        <div class="hero-points" aria-label="Öne çıkan özellikler">
+          <span>Gerçek zamanlı</span>
+          <span>Yüksek çözünürlük</span>
+          <span>Tek merkez</span>
         </div>
       </div>
 
-      <div class="scroll-cue" aria-hidden="true"><span></span>CANLI DEMO</div>
+      <aside class="hero-brand" aria-label="Haliloxo Live Studio indirme">
+        <div class="logo-orbit" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <img src="/assets/oxo-logo-512.png" width="260" height="260" alt="">
+        </div>
+        <p>HALİLOXO <span>LIVE STUDIO</span></p>
+        <button class="primary-download" type="button" data-installer-download>
+          <span class="download-symbol" aria-hidden="true">↓</span>
+          <span><strong>Windows için indir</strong><small><b data-version>Güncel sürüm</b> · <i data-file-size>Hazırlanıyor</i></small></span>
+        </button>
+        <small class="download-note" aria-live="polite" data-download-status>Windows 10 ve 11 · 64-bit</small>
+      </aside>
+
+      <figure class="product-film reveal" data-film-shell>
+        <div class="film-chrome" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <b>HALİLOXO LIVE STUDIO</b>
+          <em>GERÇEK PROGRAM GÖRÜNTÜSÜ</em>
+        </div>
+        <div class="film-stage">
+          <video
+            data-product-film
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/assets/haliloxo-program-poster.webp"
+            aria-label="Haliloxo Live Studio gerçek program tanıtımı"
+          >
+            <source src="/assets/haliloxo-program-tanitim.webm" type="video/webm">
+            <source src="/assets/haliloxo-program-tanitim.mp4" type="video/mp4">
+          </video>
+          <div class="film-fallback" data-film-fallback>
+            <img src="/assets/oxo-logo-512.png" alt="">
+            <p>Gerçek program tanıtımı hazırlanıyor.</p>
+          </div>
+        </div>
+        <figcaption>
+          <span>01</span>
+          <p><strong>Program nasılsa, burada da öyle.</strong> Bağlantıdan sohbete, hediyeden müziğe kadar gerçek çalışma akışı.</p>
+          <small>Otomatik oynatılır · Sessiz tanıtım</small>
+        </figcaption>
+      </figure>
     </section>
 
-    <section class="visual-story connect-story real-studio-story" id="neden" aria-labelledby="connect-title">
-      <header class="visual-story__heading">
-        <span>01</span>
-        <div><p>GERÇEK YAYINCI ÇALIŞMA ALANI</p><h2 id="connect-title">Yayın tuvali çıktıya birebir gider.<br>Kontroller yayıncıda kalır.</h2></div>
+    <section class="why-section shell" id="neden" aria-labelledby="why-title">
+      <header class="section-heading reveal">
+        <p class="eyebrow"><span></span> Neden Haliloxo?</p>
+        <h2 id="why-title">Yayıncıya alan açar.<br><em>Yayınla birlikte hareket eder.</em></h2>
+        <p>Uzun ayar listeleri yerine, ihtiyacın olan özellikler doğru anda çalışır.</p>
       </header>
 
-      <div class="studio-showcase" aria-label="Haliloxo Live Studio yayın çalışma alanının HTML ve CSS ile hazırlanmış görünümü">
-        <div class="studio-showcase__stage">
-          <header class="studio-showcase__publisher">
-            <div class="showcase-publisher-disc" aria-label="Temsili yayıncı profili ve müzik kontrolleri">
-              <span class="showcase-rhythm-ring" aria-hidden="true"></span>
-              <button class="showcase-music-control showcase-music-previous" type="button" aria-label="Önceki müzik">‹</button>
-              <i class="showcase-publisher-avatar" aria-label="Temsili profil görseli"></i>
-              <i class="showcase-vinyl-center" aria-hidden="true"></i>
-              <button class="showcase-music-control showcase-music-next" type="button" aria-label="Sonraki müzik">›</button>
-              <button class="showcase-music-control showcase-music-pause" type="button" aria-label="Müziği duraklat">Ⅱ</button>
-              <button class="showcase-music-control showcase-music-stop" type="button" aria-label="Müziği durdur">■</button>
-            </div>
-            <span class="showcase-publisher-copy">
-              <small>ŞU ANDA ÇALIYOR</small>
-              <strong><i>Gece Akışı&nbsp; • &nbsp;Nova</i><i>Gece Akışı&nbsp; • &nbsp;Nova</i></strong>
-            </span>
-          </header>
-
-          <div class="studio-showcase__workspace">
-            <div class="showcase-edge-tools" aria-hidden="true"><i>⚙</i><i>×</i><i>−</i></div>
-            <main class="showcase-broadcast" aria-label="İzleyiciye giden yayın tuvali">
-              <img class="showcase-streamer" src="/assets/live-scene-streamer.webp" alt="Yayıncı görseli">
-              <img class="showcase-gameplay" src="/assets/live-scene-gameplay.webp" alt="Oyun görüntüsü">
-              <ol class="showcase-ranking" aria-label="Temsili beğeni sıralaması">
-                <li><b>1</b><i class="fake-avatar" data-avatar="1">A</i><span>Arda</span><em>♥ 2.009</em></li>
-                <li><b>2</b><i class="fake-avatar" data-avatar="2">L</i><span>Lina</span><em>♥ 1.080</em></li>
-                <li><b>3</b><i class="fake-avatar" data-avatar="3">E</i><span>Ece</span><em>♥ 1.003</em></li>
-                <li><b>4</b><i class="fake-avatar" data-avatar="4">M</i><span>Mert</span><em>♥ 970</em></li>
-                <li><b>5</b><i class="fake-avatar" data-avatar="5">D</i><span>Deniz</span><em>♥ 701</em></li>
-              </ol>
-            </main>
-
-            <div class="showcase-quick-tools" aria-label="Sohbet ve TTS hızlı kontrolleri">
-              <button class="active" type="button" data-showcase-chat-toggle aria-label="Sohbeti aç veya kapat">▱</button>
-              <button class="active" type="button" data-showcase-tts-toggle aria-label="TTS'yi aç veya kapat">◖</button>
-            </div>
-
-            <section class="showcase-social" aria-label="Yalnız yayıncıya görünen sohbet ve izleyici alanı">
-              <div class="showcase-active-viewers" aria-label="Aktif izleyiciler; ilk 6 görünür, liste yatay kaydırılabilir">
-                <article><i class="fake-avatar" data-avatar="3">E</i><b>70</b></article>
-                <article><i class="fake-avatar" data-avatar="1">A</i><b>16</b></article>
-                <article><i class="fake-avatar" data-avatar="4">M</i><b>5</b></article>
-                <article><i class="fake-avatar" data-avatar="2">L</i><b>2</b></article>
-                <article><i class="fake-avatar" data-avatar="5">D</i><b>1</b></article>
-                <article><i class="fake-avatar" data-avatar="6">S</i><b>0</b></article>
-                <article><i class="fake-avatar" data-avatar="7">N</i><b>0</b></article>
-                <article><i class="fake-avatar" data-avatar="8">B</i><b>0</b></article>
-              </div>
-
-              <div class="showcase-social__columns">
-                <div class="showcase-chat-stream" aria-label="Temsili sohbet mesajları">
-                  <article>
-                    <i class="fake-avatar" data-avatar="3">E</i>
-                    <p><b>Ece <em>TAKİP</em></b><span>Yayın çok net görünüyor 🔥</span><small>05:42</small></p>
-                  </article>
-                  <article>
-                    <i class="fake-avatar" data-avatar="4">M</i>
-                    <p><b>Mert <em>MOD</em></b><span>Yeni sahne hazır!</span><small>05:42</small></p>
-                  </article>
-                  <article>
-                    <i class="fake-avatar" data-avatar="2">L</i>
-                    <p><b>Lina <em>TAKİP</em></b><span>Hediye şablonu harika olmuş.</span><small>05:43</small></p>
-                  </article>
-                  <article class="showcase-chat-gift">
-                    <i class="fake-avatar" data-avatar="5">D</i>
-                    <p><b>Deniz</b><span><strong>💖</strong> El Kalp ×5</span><small>148 jeton</small></p>
-                  </article>
-                </div>
-
-                <aside class="showcase-joins" aria-label="Yayına katılanlar">
-                  <article><i class="fake-avatar" data-avatar="6">M</i><p><b>Mira</b><span>yayına katıldı</span></p></article>
-                  <article><i class="fake-avatar" data-avatar="7">L</i><p><b>Leyla</b><span>yayına katıldı</span></p></article>
-                  <article><i class="fake-avatar" data-avatar="8">S</i><p><b>Selin</b><span>yayına katıldı</span></p></article>
-                  <article><i class="fake-avatar" data-avatar="5">D</i><p><b>Deniz</b><span>yayına katıldı</span></p></article>
-                  <article><i class="fake-avatar" data-avatar="1">A</i><p><b>Arda</b><span>yayına katıldı</span></p></article>
-                  <article><i class="fake-avatar" data-avatar="9">N</i><p><b>Nehir</b><span>yayına katıldı</span></p></article>
-                </aside>
-              </div>
-            </section>
+      <div class="why-grid">
+        <article class="why-card why-card--wide reveal">
+          <span class="card-index">01</span>
+          <div class="card-visual effect-visual" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><b>OXO</b>
           </div>
-        </div>
-
-        <div class="studio-showcase__features" aria-label="Canlı demo özellikleri">
-          <span><b>48 bant</b> sese tepki veren müzik ritmi</span>
-          <span><b>İlk 6 görünür</b> 100 kişiye kadar etkinlik takibi</span>
-          <span><b>Alttan yukarı</b> aranabilir ve filtrelenebilir sohbet</span>
-          <span><b>720p / 1080p</b> dikey ve yatay yayın yüzeyi</span>
-        </div>
-        <div class="studio-showcase__note"><i></i><span>Yayın tuvali, sohbet, aktiflik, müzik ve kontrol yüzeyleri gerçek program düzenindedir.</span><strong>Yalnızca adlar ve profil görselleri kurgusaldır.</strong></div>
-      </div>
-    </section>
-
-    <section class="visual-story chat-story" aria-labelledby="chat-title">
-      <header class="visual-story__heading">
-        <span>02</span>
-        <div><p>SOHBET</p><h2 id="chat-title">Yayın hareket eder.<br>Her şey aynı yerde görünür.</h2></div>
-      </header>
-
-      <div class="hlx-app hlx-app--chat" aria-label="Canlı sohbet, aktif izleyiciler ve hediye kombosu animasyonu">
-        <div class="hlx-app__top hlx-app__top--music">
-          <div class="hlx-publisher hlx-publisher--online">
-            <span class="hlx-record hlx-record--rhythm"><img src="/assets/fictional-publisher.webp" alt="Temsili yayıncı profili"><i></i><i></i><i></i><i></i></span>
-            <strong>NOVA REX</strong>
-          </div>
-          <div class="hlx-active-head">
-            <span>AKTİF İZLEYİCİLER</span>
-            <div><i class="viewer-1">H<small>740</small></i><i class="viewer-2">S<small>520</small></i><i class="viewer-3">M<small>310</small></i><i class="viewer-4">E<small>180</small></i><i class="viewer-5">C<small>95</small></i><i class="viewer-6">D<small>40</small></i></div>
-          </div>
-        </div>
-        <div class="hlx-app__workspace">
-          <nav class="hlx-rail" aria-label="Program menüsü">
-            <button aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
-            <button aria-label="Hediye"><span>◇</span></button>
-            <button aria-label="Olay ve tetik"><span>⚡</span></button>
-            <button class="active" aria-label="Sohbet"><span>▱</span></button>
-            <button aria-label="Beğenme"><span>♡</span></button>
-            <button aria-label="TTS"><span>◖</span></button>
-            <button aria-label="Müzik"><span>♫</span></button>
-            <button aria-label="Katmanlar"><span>▤</span></button>
-          </nav>
-          <div class="hlx-canvas">
-            <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
-            <div class="hlx-gift-template">
-              <span><i>🌹</i><b>Gül</b></span><span><i>💖</i><b>El Kalp</b></span><span><i>🎂</i><b>Pasta Dilimi</b></span><span><i>🎤</i><b>Mikrofon</b></span>
-            </div>
-            <div class="hlx-like-widget"><b>♡</b><span>Selin</span><strong>12.480</strong></div>
-          </div>
-          <section class="hlx-chat-surface">
-            <div class="hlx-gift-combo">
-              <span class="hlx-gift-combo__avatar">H</span>
-              <i>💖</i>
-              <div><small>NOVA REX</small><strong>El Kalp <b>×5</b></strong><em>740 jeton</em></div>
-            </div>
-            <div class="hlx-chat-messages">
-              <article class="hlx-message hlx-message--one">
-                <i class="viewer-2">S</i>
-                <div><header><strong>Selin</strong><em>MOD</em><em>TAKİP</em><time>21:14</time></header><p>Yayın çok iyi görünüyor 🔥</p></div>
-              </article>
-              <article class="hlx-message hlx-message--two">
-                <i class="viewer-3">M</i>
-                <div><header><strong>Mert</strong><em>HAYRAN</em><time>21:15</time></header><p>Bu şarkının adı ne?</p></div>
-              </article>
-              <article class="hlx-message hlx-message--gift">
-                <i class="viewer-4">E</i>
-                <div><header><strong>Elif</strong><em>SÜPER HAYRAN</em><time>21:15</time></header><p><span class="hlx-gift-visual">💖<small>148</small></span><b>El Kalp</b><strong>×5 · 740</strong></p></div>
-              </article>
-            </div>
-            <aside class="hlx-joins">
-              <span>YAYINA KATILDI</span>
-              <p class="join-one"><i>A</i><b>Ayşe</b></p>
-              <p class="join-two"><i>B</i><b>Burak</b></p>
-              <p class="join-three"><i>D</i><b>Deniz</b></p>
-            </aside>
-            <div class="hlx-quick"><button class="on">▱</button><button class="on">◖</button></div>
-          </section>
-        </div>
-        <div class="chat-demo__labels" aria-hidden="true">
-          <span>Mesajlar</span><span>Hediye kombosu</span><span>Aktif kişiler</span><span>Katılanlar</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="visual-story audio-story" aria-labelledby="audio-title">
-      <header class="visual-story__heading">
-        <span>03</span>
-        <div><p>TTS &amp; MÜZİK</p><h2 id="audio-title">Sen konuş.<br>Sesler sana yer açsın.</h2></div>
-      </header>
-
-      <div class="hlx-app hlx-app--audio" aria-label="Yayıncı konuşurken müzik ve TTS seslerinin otomatik azalması animasyonu">
-        <div class="hlx-app__top hlx-app__top--music">
-          <div class="hlx-publisher hlx-publisher--online hlx-publisher--music">
-            <span class="hlx-record hlx-record--rhythm">
-              <img src="/assets/fictional-publisher.webp" alt="Temsili yayıncı profili">
-              <i></i><i></i><i></i><i></i><i></i><i></i>
-              <button class="previous">‹</button><button class="play">Ⅱ</button><button class="next">›</button>
-            </span>
-            <div><small>ŞU ANDA ÇALIYOR</small><strong>Gece Akışı</strong><em>Nova çalma listesi</em></div>
-          </div>
-        </div>
-        <div class="hlx-app__workspace">
-          <nav class="hlx-rail" aria-label="Program menüsü">
-            <button aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
-            <button aria-label="Hediye"><span>◇</span></button>
-            <button aria-label="Olay ve tetik"><span>⚡</span></button>
-            <button aria-label="Sohbet"><span>▱</span></button>
-            <button aria-label="Beğenme"><span>♡</span></button>
-            <button class="active" aria-label="TTS"><span>◖</span></button>
-            <button aria-label="Müzik"><span>♫</span></button>
-            <button aria-label="Katmanlar"><span>▤</span></button>
-          </nav>
-          <section class="hlx-settings hlx-settings--tts">
-            <header><span>GENEL AYARLAR</span><strong>TTS Sesli Okuma</strong></header>
-            <div class="hlx-settings__scroll">
-              <section class="hlx-card">
-                <small>KİMLER OKUNACAK</small>
-                <button class="hlx-choice">Herkes, takipçi, moderatör <b>⌄</b></button>
-              </section>
-              <section class="hlx-card">
-                <small>OKUMA AYARLARI</small>
-                <label class="hlx-setting-row"><span>Okuma hızı</span><input type="range" min="0" max="100" value="58"><b>1.05×</b></label>
-                <label class="hlx-setting-row"><span>Doğal duraklama</span><i class="hlx-toggle on"></i></label>
-                <label class="hlx-setting-row"><span>Emoji ve sembolleri oku</span><i class="hlx-toggle"></i></label>
-              </section>
-              <section class="hlx-card hlx-voice-card">
-                <small>YAYINCI KONUŞMA ALGILAMASI <em>PRO</em></small>
-                <label class="hlx-setting-row"><span>Ben konuşurken TTS sesini kıs</span><i class="hlx-toggle on"></i></label>
-                <div class="hlx-mic-line">
-                  <span class="status-listening">Ses bekleniyor</span><span class="status-speaking">Yayıncı konuşuyor</span>
-                  <div class="hlx-db-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                  <b>-24 dB</b>
-                </div>
-                <label class="hlx-setting-row"><span>Konuşurken TTS seviyesi</span><input class="duck-range duck-range--tts" type="range" min="0" max="100" value="18"><b><span class="level-open">%72</span><span class="level-ducked">%18</span></b></label>
-                <label class="hlx-setting-row"><span>Konuşurken müzik seviyesi</span><input class="duck-range duck-range--music" type="range" min="0" max="100" value="12"><b><span class="level-open">%64</span><span class="level-ducked">%12</span></b></label>
-              </section>
-            </div>
-          </section>
-          <div class="hlx-canvas hlx-canvas--audio">
-            <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
-            <div class="voice-ducking-scene" aria-hidden="true">
-              <div class="voice-speaker">
-                <div class="voice-speaker__body"></div>
-                <div class="voice-speaker__head">
-                  <i class="voice-speaker__nose"></i>
-                  <i class="voice-speaker__mouth"></i>
-                </div>
-                <div class="voice-speaker__waves"><i></i><i></i><i></i></div>
-              </div>
-              <div class="studio-microphone">
-                <i class="studio-microphone__capsule"></i>
-                <i class="studio-microphone__joint"></i>
-                <i class="studio-microphone__arm"></i>
-                <i class="studio-microphone__base"></i>
-              </div>
-              <div class="voice-state-copy">
-                <span class="voice-state-copy__speaking">Yayıncı konuşuyor</span>
-                <span class="voice-state-copy__silent">Yayıncı sustu</span>
-                <strong class="voice-state-copy__ducked">TTS ve müzik kısılıyor</strong>
-                <strong class="voice-state-copy__restored">TTS ve müzik yükseliyor</strong>
-              </div>
-            </div>
-            <div class="hlx-audio-result">
-              <article><b>◖</b><span>TTS</span><em class="level-open">%72</em><em class="level-ducked">%18</em><i></i></article>
-              <article><b>♫</b><span>Müzik</span><em class="level-open">%64</em><em class="level-ducked">%12</em><i></i></article>
-              <p><i></i><span>Konuşma algılandı</span><strong>Sesler otomatik kısıldı</strong></p>
-            </div>
-          </div>
-          <aside class="hlx-side-preview">
-            <div class="hlx-mini-chat">
-              <p><i>S</i><span><b>Selin</b> Merhaba, nasılsın?</span></p>
-              <p><i>M</i><span><b>Mert</b> Ses çok temiz geliyor</span></p>
-            </div>
-            <div class="hlx-quick"><button class="on">▱</button><button class="on">◖</button></div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="visual-story trigger-story" aria-labelledby="trigger-title">
-      <header class="visual-story__heading">
-        <span>04</span>
-        <div><p>OLAY &amp; TETİK</p><h2 id="trigger-title">Hediye gelir.<br>Sahne cevap verir.</h2></div>
-      </header>
-
-      <div class="hlx-app hlx-app--trigger" aria-label="Hediye ile medya tetikleme animasyonu">
-        <div class="hlx-app__top">
-          <div class="hlx-publisher hlx-publisher--online">
-            <span class="hlx-record"><img src="/assets/fictional-publisher.webp" alt="Temsili yayıncı profili"></span>
-            <strong>NOVA REX</strong>
-          </div>
-        </div>
-        <div class="hlx-app__workspace">
-          <nav class="hlx-rail" aria-label="Program menüsü">
-            <button aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
-            <button aria-label="Hediye"><span>◇</span></button>
-            <button class="active" aria-label="Olay ve tetik"><span>⚡</span></button>
-            <button aria-label="Sohbet"><span>▱</span></button>
-            <button aria-label="Beğenme"><span>♡</span></button>
-            <button aria-label="TTS"><span>◖</span></button>
-            <button aria-label="Müzik"><span>♫</span></button>
-            <button aria-label="Katmanlar"><span>▤</span></button>
-          </nav>
-          <section class="hlx-settings hlx-settings--event">
-            <header><span>GENEL AYARLAR</span><strong>Olay ve Tetik</strong></header>
-            <div class="hlx-settings__scroll">
-              <section class="hlx-event-card">
-                <header><span>El Kalp Teşekkürü</span><button>▶</button></header>
-                <div class="hlx-event-summary"><i>💖</i><span><small>TETİKLEYİCİ</small><strong>El Kalp</strong></span><b>×1</b></div>
-                <div class="hlx-event-media"><span>▣ Video</span><span>♫ Ses</span><span>T Yazı</span></div>
-              </section>
-              <button class="hlx-media-add">＋ Medya ekle</button>
-              <section class="hlx-card">
-                <small>KİMLER İÇİN</small>
-                <button class="hlx-choice">Herkes <b>⌄</b></button>
-              </section>
-              <section class="hlx-card">
-                <small>HAREKET VE SÜRE</small>
-                <label class="hlx-setting-row"><span>Gösterim süresi</span><b>5 saniye</b></label>
-                <label class="hlx-setting-row"><span>Sıradakini beklet</span><i class="hlx-toggle on"></i></label>
-              </section>
-            </div>
-          </section>
-          <div class="hlx-canvas hlx-canvas--trigger">
-            <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
-            <div class="hlx-trigger-gift"><i>💖</i><span><small>EL KALP</small><strong>×1</strong></span></div>
-            <div class="hlx-trigger-media">
-              <div class="trigger-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <img src="/assets/oxo-logo-192.png" alt="">
-              <p><span>NOVA REX</span> Teşekkürler!</p>
-            </div>
-          </div>
-          <aside class="hlx-layers">
-            <header>KATMANLAR</header>
-            <p><i>▾</i><span>💖 El Kalp Teşekkürü</span><b>⚡</b></p>
-            <p class="child"><i></i><span>▣ Video</span><b>◉</b></p>
-            <p class="child"><i></i><span>♫ Ses</span><b>◉</b></p>
-            <p class="child"><i></i><span>T Yazı</span><b>◉</b></p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="visual-story gift-special-story" aria-labelledby="gift-special-title" data-gift-special-demo>
-      <header class="visual-story__heading">
-        <span>05</span>
-        <div><p>ÖZEL HEDİYE ANİMASYONU</p><h2 id="gift-special-title">Hediye gelir.<br>Yayın sahnesi canlanır.</h2></div>
-      </header>
-
-      <div class="hlx-app hlx-app--gift-special" aria-label="Hediye ayarından özel animasyon widget'ı ekleme ve sohbet hediyesiyle tetikleme demosu">
-        <div class="hlx-app__top">
-          <div class="hlx-publisher hlx-publisher--online">
-            <span class="hlx-record hlx-record--rhythm"><img src="/assets/fictional-publisher.webp" alt="Temsili yayıncı profili"></span>
-            <strong>NOVA REX</strong>
-          </div>
-          <div class="gift-demo-status" aria-live="polite">
-            <i></i><span data-gift-demo-status>Hediye ayarı hazırlanıyor</span>
-          </div>
-        </div>
-
-        <div class="hlx-app__workspace">
-          <nav class="hlx-rail" aria-label="Program menüsü">
-            <button aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
-            <button class="active" aria-label="Hediye"><span>◇</span></button>
-            <button aria-label="Olay ve tetik"><span>⚡</span></button>
-            <button aria-label="Sohbet"><span>▱</span></button>
-            <button aria-label="Beğenme"><span>♡</span></button>
-            <button aria-label="TTS"><span>◖</span></button>
-            <button aria-label="Müzik"><span>♫</span></button>
-            <button aria-label="Katmanlar"><span>▤</span></button>
-          </nav>
-
-          <section class="hlx-settings hlx-settings--gift-special">
-            <header><span>GENEL AYARLAR</span><strong>Hediye</strong></header>
-            <div class="hlx-settings__scroll">
-              <section class="gift-special-settings-demo">
-                <div class="gift-special-settings-demo__label">ÖZEL ANİMASYONLAR <em>PRO</em></div>
-                <div class="gift-special-preview-card-demo">
-                  <div class="gift-special-mini-preview-demo" aria-hidden="true">
-                    <i class="gift-mini-sphere"></i><i class="gift-mini-heart">♥</i>
-                    <span class="one"></span><span class="two"></span><span class="three"></span>
-                  </div>
-                  <div><strong>Piksel Kalp Galaksisi</strong><small>Küre, patlama, 3B profiller ve teşekkür mesajı.</small></div>
-                </div>
-
-                <div class="gift-special-preset-grid-demo" aria-label="Özel animasyon seçenekleri">
-                  <button class="active" type="button" data-gift-demo-preset title="Piksel Kalp Galaksisi"><i>♥</i><span>Piksel Kalp Galaksisi</span></button>
-                  <button type="button" title="Kalpli Havai Fişek"><i>✦</i><span>Kalpli Havai Fişek</span></button>
-                  <button type="button" title="Gül Bahçesi"><i>🌹</i><span>Gül Bahçesi</span></button>
-                  <button type="button" title="Kelebek Rüyası"><i>🦋</i><span>Kelebek Rüyası</span></button>
-                  <button type="button" title="Altın At"><i>♞</i><span>Altın At</span></button>
-                  <button type="button" title="Kraliyet Tacı"><i>♛</i><span>Kraliyet Tacı</span></button>
-                  <button type="button" title="Anka Kuşu"><i>🔥</i><span>Anka Kuşu</span></button>
-                  <button type="button" title="Elmas Patlaması"><i>◆</i><span>Elmas Patlaması</span></button>
-                </div>
-
-                <label class="gift-special-row"><span>Tetikleme türü</span><select aria-label="Tetikleme türü"><option>Jeton miktarı</option></select></label>
-                <label class="gift-special-row gift-special-threshold-row"><span>Kullanıcı başına jeton eşiği</span><input data-gift-demo-threshold type="text" inputmode="numeric" value="1000" readonly aria-label="Kullanıcı başına jeton eşiği"></label>
-                <label class="gift-special-row"><span>Gösterim süresi</span><input type="text" value="12000 ms" readonly aria-label="Gösterim süresi"></label>
-                <label class="gift-special-row"><span>Animasyon hızı / yavaşlatma</span><input class="gift-special-range" type="range" min="25" max="200" value="100" tabindex="-1"><b>100%</b></label>
-                <label class="gift-special-row"><span>Her eşikte yeniden oynat</span><i class="hlx-toggle"></i></label>
-
-                <div class="gift-special-actions-demo">
-                  <button type="button" data-gift-demo-add>Yayın Ekranına Ekle</button>
-                  <button type="button">Test Et</button>
-                </div>
-              </section>
-            </div>
-          </section>
-
-          <div class="hlx-canvas hlx-canvas--gift-special" aria-label="Yayın ekranı">
-            <div class="gift-special-widget-frame" data-gift-demo-widget aria-hidden="true">
-              <span>Özel Hediye Animasyonu</span><i></i><i></i><i></i><i></i>
-            </div>
-            <div class="gift-special-animation-content" data-gift-special-host aria-hidden="true"></div>
-            <div class="gift-special-waiting" data-gift-demo-waiting>
-              <i>◇</i><strong>Özel animasyon widget'ı</strong><span>Hediye bekleniyor</span>
-            </div>
-          </div>
-
-          <aside class="gift-special-chat" aria-label="Canlı sohbet">
-            <header><span>SOHBET</span><b>CANLI</b></header>
-            <div class="gift-special-chat__stream">
-              <article class="gift-chat-line gift-chat-line--first">
-                <i class="gift-chat-avatar gift-chat-avatar--one">S</i>
-                <div><strong>Selin <em>TAKİP</em></strong><p>Animasyon çok güzel görünüyor ✨</p><time>21:17</time></div>
-              </article>
-              <article class="gift-chat-line gift-chat-line--second">
-                <i class="gift-chat-avatar gift-chat-avatar--two">M</i>
-                <div><strong>Mert <em>MOD</em></strong><p>Yeni sahne hazır!</p><time>21:18</time></div>
-              </article>
-              <article class="gift-chat-line gift-chat-line--gift" data-gift-demo-chat-gift>
-                <i class="gift-chat-avatar gift-chat-avatar--gift">L</i>
-                <div>
-                  <strong>Lina <em>TAKİP</em></strong>
-                  <p><span class="gift-chat-visual"><i></i><small>1.000</small></span><b>Disko Topu</b><mark>×1 · 1.000</mark></p>
-                  <time>21:18</time>
-                </div>
-              </article>
-            </div>
-            <footer><i></i><span>Yeni hediyeler en alttan gelir</span></footer>
-          </aside>
-        </div>
-
-        <div class="gift-demo-cursor" data-gift-demo-cursor aria-hidden="true">
-          <svg viewBox="0 0 30 38"><path d="M3 2.5 24 22h-9l5 11-5.2 2.4-5-11L3 31Z"></path></svg>
-          <span></span>
-        </div>
-      </div>
-
-      <div class="gift-special-story__flow" aria-label="Özel hediye animasyonu çalışma sırası">
-        <span><b>1</b>Özel animasyonu seç</span><i></i>
-        <span><b>2</b>Jeton eşiğini gir</span><i></i>
-        <span><b>3</b>Widget'ı ekle</span><i></i>
-        <span><b>4</b>Hediye gelsin</span><i></i>
-        <span><b>5</b>Sahnede oynat</span>
-      </div>
-    </section>
-
-    <section class="visual-story riot-story" id="valorant-flow" aria-labelledby="riot-title" data-riot-demo>
-      <header class="visual-story__heading">
-        <span>06</span>
-        <div>
-          <p>RIOT / VALORANT ENTEGRASYONU</p>
-          <h2 id="riot-title">Hesabın bağlanır.<br>Tamamlanan maçın yayına dönüşür.</h2>
-        </div>
-      </header>
-
-      <div class="riot-flow-demo">
-        <div class="riot-flow-demo__topline">
           <div>
-            <span class="riot-demo-badge">KAMUYA AÇIK DEMO</span>
-            <strong>VALORANT maç sonucu akışı</strong>
-            <small>RSO / OAuth ile açık kullanıcı onayı</small>
+            <h3>Profesyonel görsel efektler</h3>
+            <p>Hediyeler, videolar, yazılar ve özel animasyonlar tek bir düzenli olay sırasıyla sahneye gelir.</p>
           </div>
-          <p><i></i>Ücretsiz ve tüm kullanıcılara eşit erişim</p>
-        </div>
+        </article>
 
-        <ol class="riot-flow-steps" aria-label="VALORANT entegrasyonu kullanıcı akışı">
-          <li class="is-active" data-riot-step="0">
-            <button type="button" aria-label="1. adımı göster">
-              <b>01</b><span>Riot hesabını bağla</span><small>RSO / OAuth</small>
-            </button>
-          </li>
-          <li data-riot-step="1">
-            <button type="button" aria-label="2. adımı göster">
-              <b>02</b><span>Açık izin ver</span><small>Veri paylaşımı</small>
-            </button>
-          </li>
-          <li data-riot-step="2">
-            <button type="button" aria-label="3. adımı göster">
-              <b>03</b><span>Son maçları gör</span><small>Tamamlanmış maçlar</small>
-            </button>
-          </li>
-          <li data-riot-step="3">
-            <button type="button" aria-label="4. adımı göster">
-              <b>04</b><span>Yayına ekle</span><small>Sonuç kartı</small>
-            </button>
-          </li>
-        </ol>
+        <article class="why-card reveal">
+          <span class="card-index">02</span>
+          <div class="card-visual ducking-visual" aria-hidden="true">
+            <b class="voice-head"></b>
+            <i></i><i></i><i></i>
+            <span class="ducking-meter"><em></em><em></em><em></em><em></em><em></em></span>
+          </div>
+          <h3>Konuşurken sesler akıllıca kısılır</h3>
+          <p>Yayıncı konuştuğunda TTS ve müzik geri çekilir; ses kesildiğinde yumuşakça geri döner.</p>
+        </article>
 
-        <div class="riot-flow-stage">
-          <article class="riot-flow-panel riot-connect-panel is-active" data-riot-panel="0">
-            <div class="riot-panel-copy">
-              <span class="riot-panel-kicker">1 · GÜVENLİ BAĞLANTI</span>
-              <h3>Riot hesabını bağla</h3>
-              <p>Giriş, Riot’un resmi RSO / OAuth ekranında yapılır. Haliloxo Live Studio Riot parolanı görmez ve saklamaz.</p>
-              <button type="button" tabindex="-1"><i>R</i>Riot hesabıyla devam et <b>→</b></button>
-              <small>Bu düğme görsel demodur; gerçek oturum açma işlemi başlatmaz.</small>
-            </div>
-            <div class="riot-auth-window" aria-hidden="true">
-              <header><i></i><span>Güvenli Riot bağlantısı</span><b>×</b></header>
-              <div class="riot-auth-mark">R</div>
-              <strong>Haliloxo Live Studio</strong>
-              <p>Riot hesabına bağlanmak istiyor</p>
-              <span class="riot-auth-address">auth.riotgames.com</span>
-              <i class="riot-auth-scan"></i>
-            </div>
-          </article>
+        <article class="why-card reveal">
+          <span class="card-index">03</span>
+          <div class="card-visual focus-visual" aria-hidden="true">
+            <span>YAYINDASIN</span><b></b>
+          </div>
+          <h3>Rahatsız Etme düzeni</h3>
+          <p>Yayın sırasında gereksiz bildirimleri ve dikkat dağıtan işlemleri azaltan sakin çalışma alanı.</p>
+        </article>
 
-          <article class="riot-flow-panel riot-consent-panel" data-riot-panel="1">
-            <div class="riot-panel-copy">
-              <span class="riot-panel-kicker">2 · AÇIK KULLANICI ONAYI</span>
-              <h3>Hangi verinin paylaşılacağını sen seçersin</h3>
-              <p>Veriler yalnızca açık izinden sonra alınır. İzin Riot hesabı üzerinden geri çekilebilir.</p>
-              <div class="riot-consent-notice"><i>!</i><span><b>Veri paylaşımı uyarısı</b>İzin vermeden hiçbir kişisel maç verisi çekilmez.</span></div>
-            </div>
-            <div class="riot-permission-card">
-              <header><span>İSTENEN İZİNLER</span><b>3 açık onay</b></header>
-              <label><i class="checked">✓</i><span><strong>Temel Riot profili</strong><small>Riot ID ve hesap kimliği</small></span></label>
-              <label><i class="checked">✓</i><span><strong>Tamamlanmış maç geçmişi</strong><small>Sonuç, ajan, harita ve K/D/A</small></span></label>
-              <label><i class="checked">✓</i><span><strong>Yayın widget’ında gösterim</strong><small>Yalnızca kullanıcının seçtiği tamamlanmış maç kartı</small></span></label>
-              <p><i>✓</i>Canlı maç verisi veya gizli oyuncu bilgisi istenmez.</p>
-              <button type="button" tabindex="-1">İzin ver ve devam et</button>
-            </div>
-          </article>
+        <article class="why-card reveal">
+          <span class="card-index">04</span>
+          <div class="card-visual chat-visual" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <h3>TikTok sohbeti ve hediyeler</h3>
+          <p>Mesajlar, profiller, roller, beğeniler ve hediyeler yayın sahnesiyle gerçek zamanlı konuşur.</p>
+        </article>
 
-          <article class="riot-flow-panel riot-matches-panel" data-riot-panel="2">
-            <div class="riot-panel-copy">
-              <span class="riot-panel-kicker">3 · TAMAMLANMIŞ MAÇLAR</span>
-              <h3>Yalnızca biten maçların sonucu</h3>
-              <p>Kendi hesabının tamamlanmış maçları; sonuç, skor, ajan, harita ve K/D/A bilgileriyle listelenir.</p>
-              <div class="riot-player-chip"><i>NX</i><span><strong>NovaX#TR1</strong><small>Bağlı Riot hesabı · demo</small></span><b>BAĞLI</b></div>
-            </div>
-            <div class="riot-match-list" aria-label="Kurgusal tamamlanmış maç örnekleri">
-              <article class="victory">
-                <span><b>ZAFER</b><small>TAMAMLANDI</small></span>
-                <div><i>J</i><p><strong>Jett · Ascent</strong><small>Rekabetçi · 38 dk.</small></p></div>
-                <p class="riot-kda"><small>K / D / A</small><strong>24 / 14 / 7</strong></p>
-                <em>13 : 9</em>
-              </article>
-              <article>
-                <span><b>MAĞLUBİYET</b><small>TAMAMLANDI</small></span>
-                <div><i>O</i><p><strong>Omen · Bind</strong><small>Rekabetçi · 42 dk.</small></p></div>
-                <p class="riot-kda"><small>K / D / A</small><strong>18 / 17 / 9</strong></p>
-                <em>11 : 13</em>
-              </article>
-              <article class="victory">
-                <span><b>ZAFER</b><small>TAMAMLANDI</small></span>
-                <div><i>S</i><p><strong>Sova · Haven</strong><small>Rekabetçi · 35 dk.</small></p></div>
-                <p class="riot-kda"><small>K / D / A</small><strong>17 / 11 / 12</strong></p>
-                <em>13 : 7</em>
-              </article>
-            </div>
-          </article>
+        <article class="why-card reveal">
+          <span class="card-index">05</span>
+          <div class="card-visual trigger-visual" aria-hidden="true">
+            <b>HEDİYE</b><i>→</i><span>VİDEO</span>
+          </div>
+          <h3>Olaylar ve tetikler</h3>
+          <p>Hediye, jeton veya mesaj geldiğinde video, ses, yazı ve oyun eylemleri otomatik çalışır.</p>
+        </article>
 
-          <article class="riot-flow-panel riot-widget-panel" data-riot-panel="3">
-            <div class="riot-panel-copy">
-              <span class="riot-panel-kicker">4 · YAYIN SONUÇ KARTI</span>
-              <h3>Tamamlanan maçı yayın widget’ına ekle</h3>
-              <p>Yayıncı, kendi son maç kartını yayın sahnesine ekler. Kart yalnızca sonuçlandıktan sonra güncellenir.</p>
-              <button class="riot-add-widget" type="button" tabindex="-1"><i>＋</i>Yayın widget’ına ekle</button>
-            </div>
-            <div class="riot-scene-preview" aria-label="Kurgusal yayın sonuç kartı önizlemesi">
-              <header><span>YAYIN ÖNİZLEMESİ</span><b>16:9</b></header>
-              <div class="riot-scene-grid"></div>
-              <div class="riot-result-widget">
-                <span class="riot-result-agent">J</span>
-                <div><small>SON TAMAMLANAN MAÇ</small><strong>ZAFER <i>13 : 9</i></strong><p>Jett · Ascent</p></div>
-                <p><small>K / D / A</small><strong>24 / 14 / 7</strong></p>
-              </div>
-              <span class="riot-widget-anchor one"></span><span class="riot-widget-anchor two"></span>
-              <span class="riot-widget-anchor three"></span><span class="riot-widget-anchor four"></span>
-            </div>
-          </article>
-        </div>
-
-        <div class="riot-flow-disclosure">
-          <p><strong>Görsel demo</strong> Bu akış kurgusal hesap ve maç verileriyle hazırlanmıştır; gerçek Riot verisi göstermez.</p>
-          <p><strong>Rekabet bütünlüğü</strong> Devam eden maç verisi, oyuncu/rakip scouting, gizli MMR/ELO, mağaza takibi, giriş otomasyonu veya gerçek zamanlı avantaj sunmaz.</p>
-          <p><strong>Eşit erişim</strong> Riot / VALORANT bağlantılı özellikler ücretsizdir ve tüm kullanıcılara aynı koşullarda açıktır.</p>
-        </div>
-
-        <div class="riot-data-control">
-          <span><b>05</b>HESAP VE VERİ KONTROLÜ</span>
+        <article class="why-card why-card--wide reveal">
+          <span class="card-index">06</span>
+          <div class="card-visual studio-visual" aria-hidden="true">
+            <span class="studio-monitor"><i></i><b></b><em></em></span>
+            <span class="studio-signal">1080p</span>
+          </div>
           <div>
-            <strong>Bağlantıyı kaldır ve verilerini sil</strong>
-            <small>Riot bağlantısı kaldırıldığında erişim sonlandırılır; uygulamadaki Riot profil ve geçici tamamlanmış maç verileri silinir.</small>
+            <h3>Kolay arayüz, yüksek kaliteli yayın</h3>
+            <p>Widget’ları taşı, boyutlandır ve katmanla. Yüksek çözünürlüklü yayın yüzeyi, küçük pencereyi büyütmeden net görüntü üretir.</p>
           </div>
-          <button type="button" tabindex="-1">Bağlantıyı kaldır</button>
-          <button class="danger" type="button" tabindex="-1">Riot verilerimi sil</button>
-        </div>
+        </article>
 
-        <div class="riot-acknowledgements" aria-label="Riot entegrasyonu uygunluk taahhütleri">
-          <span>UYUMLULUK TAAHHÜTLERİ</span>
-          <ul>
-            <li><i>✓</i>Açık kullanıcı onayı</li>
-            <li><i>✓</i>Parola saklanmaz</li>
-            <li><i>✓</i>Yalnız izin verilen veri</li>
-            <li><i>✓</i>Yalnız tamamlanmış maçlar</li>
-            <li><i>✓</i>Canlı rakip analizi yok</li>
-            <li><i>✓</i>MMR, mağaza ve giriş otomasyonu yok</li>
-            <li><i>✓</i>Ücretsiz ve eşit erişim</li>
-          </ul>
-        </div>
+        <article class="why-card reveal">
+          <span class="card-index">07</span>
+          <div class="card-visual sync-visual" aria-hidden="true">
+            <i></i><b>↻</b><i></i>
+          </div>
+          <h3>Ayar yedekleme ve eşitleme</h3>
+          <p>Yayın düzenini hesabınla koru ve kullandığın bilgisayarda aynı çalışma alanına geri dön.</p>
+        </article>
 
-        <small class="riot-legal-note" lang="en">Haliloxo Live Studio isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</small>
+        <article class="why-card reveal">
+          <span class="card-index">08</span>
+          <div class="card-visual game-visual" aria-hidden="true">
+            <span>+1</span><i></i><b>OYUN</b><i></i><span>×2</span>
+          </div>
+          <h3>Oyunlar ve etkileşim araçları</h3>
+          <p>Harita, skor, parkur ve özel yayın oyunları sohbet ile hediyeleri canlı oyuna dönüştürür.</p>
+        </article>
       </div>
     </section>
 
-    <section class="visual-final">
-      <div class="visual-final__mark"><img src="/assets/oxo-logo-512.png" alt=""></div>
-      <p>HAZIRSAN</p>
-      <h2>Yayınını<br><span>canlandır.</span></h2>
-      <a class="visual-download visual-download--large" href="/indir/">
-        <span class="visual-download__icon" aria-hidden="true">↓</span>
-        <span><strong>Haliloxo Live Studio'yu indir</strong><small>Windows 10 / 11 · <b data-version>v1.0.12</b></small></span>
-      </a>
-      <nav aria-label="Alt bağlantılar">
-        <a href="/ozellikler/">Özellikler</a>
-        <a href="/destek/">Destek</a>
-        <a href="/gizlilik-politikasi/">Gizlilik</a>
-        <a href="/hizmet-sartlari/">Hizmet şartları</a>
-      </nav>
-      <small>© 2026 Haliloxo Live Studio</small>
+    <section class="pricing-section" id="fiyatlandirma" aria-labelledby="pricing-title">
+      <div class="shell">
+        <header class="section-heading section-heading--center reveal">
+          <p class="eyebrow"><span></span> Premium üyelik</p>
+          <h2 id="pricing-title">İhtiyacın kadar başla.<br><em>Tüm stüdyoyu kullan.</em></h2>
+          <p>Tek Premium paket. Süreyi sen seçersin; özellik farkı yoktur.</p>
+        </header>
+
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <div class="pricing-card__top">
+              <span>7 GÜN</span>
+              <small>Kısa süreli kullanım</small>
+            </div>
+            <p class="price"><strong>350</strong><span>TL</span></p>
+            <ul>
+              <li>Tüm Premium özellikler</li>
+              <li>Oyunlar ve gelişmiş tetikler</li>
+              <li>Bulut ayar eşitleme</li>
+            </ul>
+            <button type="button" disabled aria-disabled="true">Satış yakında</button>
+          </article>
+
+          <article class="pricing-card pricing-card--featured reveal">
+            <span class="pricing-badge">TAM ERİŞİM</span>
+            <div class="pricing-card__top">
+              <span>1 AY</span>
+              <small>Premium üyelik</small>
+            </div>
+            <p class="price"><strong>1.500</strong><span>TL</span></p>
+            <ul>
+              <li>Programın tüm Premium özellikleri</li>
+              <li>Gelişmiş animasyon, ses ve otomasyon</li>
+              <li>Yayın oyunları ve etkileşim araçları</li>
+            </ul>
+            <button type="button" disabled aria-disabled="true">Satış yakında</button>
+          </article>
+        </div>
+
+        <p class="pricing-note">Ödeme altyapısı hazırlanıyor. Satın alma öncesinde güncel koşullar ve sözleşme gösterilecektir.</p>
+      </div>
+    </section>
+
+    <section class="final-statement shell reveal">
+      <img src="/assets/oxo-logo-192.png" width="72" height="72" alt="">
+      <p>HALİLOXO LIVE STUDIO</p>
+      <h2>Yayınını anlatma.<br><em>Göster.</em></h2>
     </section>
   </main>
 
-  <script src="/site.js?v=20260731-1" defer></script>
+  <footer class="site-footer">
+    <div class="shell footer-main">
+      <div>
+        <a class="brand footer-brand" href="/">
+          <img src="/assets/oxo-logo-192.png" width="44" height="44" alt="">
+          <span class="brand-copy"><strong>Haliloxo</strong><small>Live Studio</small></span>
+        </a>
+        <p>Canlı yayınını tek merkezden yönet.</p>
+      </div>
+      <nav class="footer-links" aria-label="Alt bağlantılar">
+        <a href="/ozellikler/">Özellikler</a>
+        <a href="/gizlilik-politikasi/">Gizlilik Politikası</a>
+        <a href="/hizmet-sartlari/">Hizmet Şartları</a>
+        <a href="mailto:haliloxox@gmail.com">haliloxox@gmail.com</a>
+      </nav>
+    </div>
+    <div class="shell footer-bottom">
+      <span>© 2026 Haliloxo Live Studio</span>
+      <span>Windows canlı yayın üretim uygulaması</span>
+    </div>
+  </footer>
+
+  <script src="/site.js?v=20260731-3" defer></script>
 </body>
 </html>
