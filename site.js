@@ -44,7 +44,13 @@ function setupInstallerDownload(releaseRequest) {
       trigger.setAttribute("aria-busy", "true");
       try {
         await releaseRequest;
-        window.location.assign(resolvedInstallerUrl);
+        const downloadFrame = document.createElement("iframe");
+        downloadFrame.hidden = true;
+        downloadFrame.setAttribute("aria-hidden", "true");
+        downloadFrame.title = "Haliloxo Live Studio kurulum indirmesi";
+        downloadFrame.src = resolvedInstallerUrl;
+        document.body.append(downloadFrame);
+        setTimeout(() => downloadFrame.remove(), 60_000);
       } finally {
         setTimeout(() => {
           busy = false;
