@@ -135,82 +135,69 @@
         <div><p>GERÇEK PROGRAM GÖRÜNÜMÜ</p><h2 id="connect-title">Sahnen nasıl görünüyorsa.<br>İzleyicin de onu görür.</h2></div>
       </header>
 
-      <div class="real-studio-demo" aria-label="Haliloxo Live Studio programının HTML ve CSS ile hazırlanmış örnek görünümü">
-        <div class="real-studio-window">
-          <header class="real-studio-topbar" aria-label="Yayıncı ve yayın durumu">
-            <div class="real-studio-brand">
-              <img src="/assets/oxo-logo-192.png" alt="">
-              <span><strong>Haliloxo Live Studio</strong><small>Yayıncı profili ve müzik alanı</small></span>
+      <div class="studio-showcase" aria-label="Haliloxo Live Studio yayın çalışma alanının HTML ve CSS ile hazırlanmış görünümü">
+        <header class="studio-showcase__publisher">
+          <i class="showcase-publisher-avatar"><img src="/assets/oxo-logo-192.png" alt=""></i>
+          <span><small>YAYINCI</small><strong>HALİLOXO</strong></span>
+        </header>
+
+        <div class="studio-showcase__workspace">
+          <main class="showcase-broadcast">
+            <div class="showcase-edge-tools" aria-hidden="true"><i></i><i></i><i></i></div>
+            <img class="showcase-streamer" src="/assets/live-scene-streamer.webp" alt="Yayıncı görseli">
+            <img class="showcase-gameplay" src="/assets/live-scene-gameplay.webp" alt="Oyun görüntüsü">
+            <ol class="showcase-ranking" aria-label="Temsili beğeni sıralaması">
+              <li><b>1</b><i class="fake-avatar fake-avatar--violet">A</i><span>Arda</span><em>♥ 2.009</em></li>
+              <li><b>2</b><i class="fake-avatar fake-avatar--pink">L</i><span>Lina</span><em>♥ 1.080</em></li>
+              <li><b>3</b><i class="fake-avatar fake-avatar--cyan">E</i><span>Ece</span><em>♥ 1.003</em></li>
+              <li><b>4</b><i class="fake-avatar fake-avatar--orange">M</i><span>Mert</span><em>♥ 970</em></li>
+              <li><b>5</b><i class="fake-avatar fake-avatar--green">D</i><span>Deniz</span><em>♥ 701</em></li>
+            </ol>
+          </main>
+
+          <section class="showcase-social" aria-label="Sohbet ve izleyici alanı">
+            <div class="showcase-active-viewers" aria-label="Aktif izleyiciler">
+              <article><i class="fake-avatar fake-avatar--cyan">E</i><b>70</b></article>
+              <article><i class="fake-avatar fake-avatar--violet">A</i><b>16</b></article>
+              <article><i class="fake-avatar fake-avatar--orange">M</i><b>5</b></article>
+              <article><i class="fake-avatar fake-avatar--pink">L</i><b>2</b></article>
+              <article><i class="fake-avatar fake-avatar--green">D</i><b>1</b></article>
+              <article><i class="fake-avatar fake-avatar--cyan">S</i><b>0</b></article>
             </div>
-            <div class="real-studio-status"><i></i><span>Canlı veriler bağlı</span><b>720 × 1280 yayın yüzeyi</b></div>
-          </header>
 
-          <div class="real-studio-body">
-            <nav class="real-studio-rail" aria-label="Program menüsü">
-              <button aria-label="TikTok yayın bağlantısı">⌁</button>
-              <button aria-label="Hediye">◇</button>
-              <button aria-label="Olay ve tetik">⚡</button>
-              <button aria-label="Sohbet">▱</button>
-              <button class="active" aria-label="Beğenme">♡</button>
-              <button aria-label="TTS">◖</button>
-              <button aria-label="Müzik">♫</button>
-              <button aria-label="Katmanlar">▤</button>
-            </nav>
+            <div class="showcase-social__columns">
+              <div class="showcase-chat-stream" aria-label="Temsili sohbet mesajları">
+                <article>
+                  <i class="fake-avatar fake-avatar--cyan">E</i>
+                  <p><b>Ece <em>TAKİP</em></b><span>Yayın çok net görünüyor 🔥</span><small>05:42</small></p>
+                </article>
+                <article>
+                  <i class="fake-avatar fake-avatar--orange">M</i>
+                  <p><b>Mert <em>MOD</em></b><span>Yeni sahne hazır!</span><small>05:42</small></p>
+                </article>
+                <article>
+                  <i class="fake-avatar fake-avatar--pink">L</i>
+                  <p><b>Lina <em>TAKİP</em></b><span>Hediye şablonu harika olmuş.</span><small>05:43</small></p>
+                </article>
+                <article class="showcase-chat-gift">
+                  <i class="fake-avatar fake-avatar--green">D</i>
+                  <p><b>Deniz</b><span><strong>💖</strong> El Kalp ×5</span><small>148 jeton</small></p>
+                </article>
+              </div>
 
-            <aside class="real-studio-settings">
-              <header><small>GENEL AYARLAR</small><strong>Beğeni Listesi</strong></header>
-              <div class="real-setting-card">
-                <span>Gösterilecek kişi</span><b>5</b>
-                <i style="--level:72%"></i>
-              </div>
-              <div class="real-setting-card">
-                <span>Profil büyüklüğü</span><b>56 px</b>
-                <i style="--level:64%"></i>
-              </div>
-              <div class="real-setting-card">
-                <span>İsim büyüklüğü</span><b>25 px</b>
-                <i style="--level:50%"></i>
-              </div>
-              <div class="real-setting-switch"><span>Bot tespiti</span><i></i></div>
-              <div class="real-setting-switch"><span>Beğeni hatırlatması</span><i></i></div>
-              <button class="real-reset-button">Listeyi sıfırla</button>
-            </aside>
-
-            <main class="real-studio-stage-wrap">
-              <div class="real-studio-stage-label"><span>YAYIN EKRANI</span><b>720 × 1280</b></div>
-              <div class="real-broadcast-screen">
-                <img class="real-scene-streamer" src="/assets/live-scene-streamer.webp" alt="Yayın sahnesindeki oyun yayıncısı illüstrasyonu">
-                <img class="real-scene-gameplay" src="/assets/live-scene-gameplay.webp" alt="Yayın sahnesindeki oyun görüntüsü">
-
-                <div class="real-like-list" aria-label="Temsili beğeni listesi">
-                  <article><b>1</b><i class="fake-avatar fake-avatar--violet">A</i><span><strong>Arda</strong></span><em>♥ <small>486</small></em></article>
-                  <article><b>2</b><i class="fake-avatar fake-avatar--cyan">E</i><span><strong>Ece</strong></span><em>♥ <small>346</small></em></article>
-                  <article><b>3</b><i class="fake-avatar fake-avatar--orange">M</i><span><strong>Mert</strong></span><em>♥ <small>325</small></em></article>
-                  <article><b>4</b><i class="fake-avatar fake-avatar--pink">L</i><span><strong>Lina</strong></span><em>♥ <small>310</small></em></article>
-                  <article><b>5</b><i class="fake-avatar fake-avatar--green">D</i><span><strong>Deniz</strong></span><em>♥ <small>309</small></em></article>
-                </div>
-              </div>
-            </main>
-
-            <aside class="real-studio-chat">
-              <header><span>SOHBET</span><i></i></header>
-              <div class="real-active-users">
-                <b class="fake-avatar fake-avatar--orange">M</b>
-                <b class="fake-avatar fake-avatar--pink">L</b>
-                <b class="fake-avatar fake-avatar--green">D</b>
-                <b class="fake-avatar fake-avatar--cyan">E</b>
-                <span>+12</span>
-              </div>
-              <div class="real-chat-feed">
-                <article><i class="fake-avatar fake-avatar--cyan">E</i><p><b>Ece <em>TAKİP</em></b><span>Yayın çok net görünüyor 🔥</span></p></article>
-                <article><i class="fake-avatar fake-avatar--orange">M</i><p><b>Mert <em>MOD</em></b><span>Yeni sahne hazır!</span></p></article>
-                <article class="real-gift-message"><i class="fake-avatar fake-avatar--pink">L</i><p><b>Lina</b><span><strong>💖</strong> El Kalp ×5</span><small>148 jeton</small></p></article>
-              </div>
-              <div class="real-chat-actions"><button class="on">▱</button><button class="on">◖</button></div>
-            </aside>
-          </div>
+              <aside class="showcase-joins" aria-label="Yayına katılanlar">
+                <article><i class="fake-avatar fake-avatar--orange">M</i><p><b>Mira</b><span>yayına katıldı</span></p></article>
+                <article><i class="fake-avatar fake-avatar--pink">L</i><p><b>Leyla</b><span>yayına katıldı</span></p></article>
+                <article><i class="fake-avatar fake-avatar--cyan">S</i><p><b>Selin</b><span>yayına katıldı</span></p></article>
+                <article><i class="fake-avatar fake-avatar--green">D</i><p><b>Deniz</b><span>yayına katıldı</span></p></article>
+                <article><i class="fake-avatar fake-avatar--violet">A</i><p><b>Arda</b><span>yayına katıldı</span></p></article>
+                <article><i class="fake-avatar fake-avatar--orange">N</i><p><b>Nehir</b><span>yayına katıldı</span></p></article>
+              </aside>
+            </div>
+          </section>
         </div>
-        <div class="real-studio-note"><i></i><span>Yayın sahnesi açık programdaki düzenle eşleşir.</span><strong>Profil görselleri temsilidir.</strong></div>
+
+        <div class="studio-showcase__note"><i></i><span>Yayın ekranı, sohbet ve izleyici alanları tek çalışma yüzeyinde.</span><strong>Profil içerikleri temsilidir.</strong></div>
       </div>
     </section>
 
