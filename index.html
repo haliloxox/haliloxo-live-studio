@@ -132,72 +132,98 @@
     <section class="visual-story connect-story real-studio-story" aria-labelledby="connect-title">
       <header class="visual-story__heading">
         <span>01</span>
-        <div><p>GERÇEK PROGRAM GÖRÜNÜMÜ</p><h2 id="connect-title">Sahnen nasıl görünüyorsa.<br>İzleyicin de onu görür.</h2></div>
+        <div><p>GERÇEK YAYINCI ÇALIŞMA ALANI</p><h2 id="connect-title">Yayın tuvali çıktıya birebir gider.<br>Kontroller yayıncıda kalır.</h2></div>
       </header>
 
       <div class="studio-showcase" aria-label="Haliloxo Live Studio yayın çalışma alanının HTML ve CSS ile hazırlanmış görünümü">
-        <header class="studio-showcase__publisher">
-          <i class="showcase-publisher-avatar"><img src="/assets/oxo-logo-192.png" alt=""></i>
-          <span><small>YAYINCI</small><strong>HALİLOXO</strong></span>
-        </header>
+        <div class="studio-showcase__stage">
+          <header class="studio-showcase__publisher">
+            <div class="showcase-publisher-disc" aria-label="Temsili yayıncı profili ve müzik kontrolleri">
+              <span class="showcase-rhythm-ring" aria-hidden="true"></span>
+              <button class="showcase-music-control showcase-music-previous" type="button" aria-label="Önceki müzik">‹</button>
+              <i class="showcase-publisher-avatar" aria-label="Temsili profil görseli"></i>
+              <i class="showcase-vinyl-center" aria-hidden="true"></i>
+              <button class="showcase-music-control showcase-music-next" type="button" aria-label="Sonraki müzik">›</button>
+              <button class="showcase-music-control showcase-music-pause" type="button" aria-label="Müziği duraklat">Ⅱ</button>
+              <button class="showcase-music-control showcase-music-stop" type="button" aria-label="Müziği durdur">■</button>
+            </div>
+            <span class="showcase-publisher-copy">
+              <small>ŞU ANDA ÇALIYOR</small>
+              <strong><i>Gece Akışı&nbsp; • &nbsp;Nova</i><i>Gece Akışı&nbsp; • &nbsp;Nova</i></strong>
+            </span>
+          </header>
 
-        <div class="studio-showcase__workspace">
-          <main class="showcase-broadcast">
-            <div class="showcase-edge-tools" aria-hidden="true"><i></i><i></i><i></i></div>
-            <img class="showcase-streamer" src="/assets/live-scene-streamer.webp" alt="Yayıncı görseli">
-            <img class="showcase-gameplay" src="/assets/live-scene-gameplay.webp" alt="Oyun görüntüsü">
-            <ol class="showcase-ranking" aria-label="Temsili beğeni sıralaması">
-              <li><b>1</b><i class="fake-avatar fake-avatar--violet">A</i><span>Arda</span><em>♥ 2.009</em></li>
-              <li><b>2</b><i class="fake-avatar fake-avatar--pink">L</i><span>Lina</span><em>♥ 1.080</em></li>
-              <li><b>3</b><i class="fake-avatar fake-avatar--cyan">E</i><span>Ece</span><em>♥ 1.003</em></li>
-              <li><b>4</b><i class="fake-avatar fake-avatar--orange">M</i><span>Mert</span><em>♥ 970</em></li>
-              <li><b>5</b><i class="fake-avatar fake-avatar--green">D</i><span>Deniz</span><em>♥ 701</em></li>
-            </ol>
-          </main>
+          <div class="studio-showcase__workspace">
+            <div class="showcase-edge-tools" aria-hidden="true"><i>⚙</i><i>×</i><i>−</i></div>
+            <main class="showcase-broadcast" aria-label="İzleyiciye giden yayın tuvali">
+              <img class="showcase-streamer" src="/assets/live-scene-streamer.webp" alt="Yayıncı görseli">
+              <img class="showcase-gameplay" src="/assets/live-scene-gameplay.webp" alt="Oyun görüntüsü">
+              <ol class="showcase-ranking" aria-label="Temsili beğeni sıralaması">
+                <li><b>1</b><i class="fake-avatar" data-avatar="1">A</i><span>Arda</span><em>♥ 2.009</em></li>
+                <li><b>2</b><i class="fake-avatar" data-avatar="2">L</i><span>Lina</span><em>♥ 1.080</em></li>
+                <li><b>3</b><i class="fake-avatar" data-avatar="3">E</i><span>Ece</span><em>♥ 1.003</em></li>
+                <li><b>4</b><i class="fake-avatar" data-avatar="4">M</i><span>Mert</span><em>♥ 970</em></li>
+                <li><b>5</b><i class="fake-avatar" data-avatar="5">D</i><span>Deniz</span><em>♥ 701</em></li>
+              </ol>
+            </main>
 
-          <section class="showcase-social" aria-label="Sohbet ve izleyici alanı">
-            <div class="showcase-active-viewers" aria-label="Aktif izleyiciler">
-              <article><i class="fake-avatar fake-avatar--cyan">E</i><b>70</b></article>
-              <article><i class="fake-avatar fake-avatar--violet">A</i><b>16</b></article>
-              <article><i class="fake-avatar fake-avatar--orange">M</i><b>5</b></article>
-              <article><i class="fake-avatar fake-avatar--pink">L</i><b>2</b></article>
-              <article><i class="fake-avatar fake-avatar--green">D</i><b>1</b></article>
-              <article><i class="fake-avatar fake-avatar--cyan">S</i><b>0</b></article>
+            <div class="showcase-quick-tools" aria-label="Sohbet ve TTS hızlı kontrolleri">
+              <button class="active" type="button" data-showcase-chat-toggle aria-label="Sohbeti aç veya kapat">▱</button>
+              <button class="active" type="button" data-showcase-tts-toggle aria-label="TTS'yi aç veya kapat">◖</button>
             </div>
 
-            <div class="showcase-social__columns">
-              <div class="showcase-chat-stream" aria-label="Temsili sohbet mesajları">
-                <article>
-                  <i class="fake-avatar fake-avatar--cyan">E</i>
-                  <p><b>Ece <em>TAKİP</em></b><span>Yayın çok net görünüyor 🔥</span><small>05:42</small></p>
-                </article>
-                <article>
-                  <i class="fake-avatar fake-avatar--orange">M</i>
-                  <p><b>Mert <em>MOD</em></b><span>Yeni sahne hazır!</span><small>05:42</small></p>
-                </article>
-                <article>
-                  <i class="fake-avatar fake-avatar--pink">L</i>
-                  <p><b>Lina <em>TAKİP</em></b><span>Hediye şablonu harika olmuş.</span><small>05:43</small></p>
-                </article>
-                <article class="showcase-chat-gift">
-                  <i class="fake-avatar fake-avatar--green">D</i>
-                  <p><b>Deniz</b><span><strong>💖</strong> El Kalp ×5</span><small>148 jeton</small></p>
-                </article>
+            <section class="showcase-social" aria-label="Yalnız yayıncıya görünen sohbet ve izleyici alanı">
+              <div class="showcase-active-viewers" aria-label="Aktif izleyiciler; ilk 6 görünür, liste yatay kaydırılabilir">
+                <article><i class="fake-avatar" data-avatar="3">E</i><b>70</b></article>
+                <article><i class="fake-avatar" data-avatar="1">A</i><b>16</b></article>
+                <article><i class="fake-avatar" data-avatar="4">M</i><b>5</b></article>
+                <article><i class="fake-avatar" data-avatar="2">L</i><b>2</b></article>
+                <article><i class="fake-avatar" data-avatar="5">D</i><b>1</b></article>
+                <article><i class="fake-avatar" data-avatar="6">S</i><b>0</b></article>
+                <article><i class="fake-avatar" data-avatar="7">N</i><b>0</b></article>
+                <article><i class="fake-avatar" data-avatar="8">B</i><b>0</b></article>
               </div>
 
-              <aside class="showcase-joins" aria-label="Yayına katılanlar">
-                <article><i class="fake-avatar fake-avatar--orange">M</i><p><b>Mira</b><span>yayına katıldı</span></p></article>
-                <article><i class="fake-avatar fake-avatar--pink">L</i><p><b>Leyla</b><span>yayına katıldı</span></p></article>
-                <article><i class="fake-avatar fake-avatar--cyan">S</i><p><b>Selin</b><span>yayına katıldı</span></p></article>
-                <article><i class="fake-avatar fake-avatar--green">D</i><p><b>Deniz</b><span>yayına katıldı</span></p></article>
-                <article><i class="fake-avatar fake-avatar--violet">A</i><p><b>Arda</b><span>yayına katıldı</span></p></article>
-                <article><i class="fake-avatar fake-avatar--orange">N</i><p><b>Nehir</b><span>yayına katıldı</span></p></article>
-              </aside>
-            </div>
-          </section>
+              <div class="showcase-social__columns">
+                <div class="showcase-chat-stream" aria-label="Temsili sohbet mesajları">
+                  <article>
+                    <i class="fake-avatar" data-avatar="3">E</i>
+                    <p><b>Ece <em>TAKİP</em></b><span>Yayın çok net görünüyor 🔥</span><small>05:42</small></p>
+                  </article>
+                  <article>
+                    <i class="fake-avatar" data-avatar="4">M</i>
+                    <p><b>Mert <em>MOD</em></b><span>Yeni sahne hazır!</span><small>05:42</small></p>
+                  </article>
+                  <article>
+                    <i class="fake-avatar" data-avatar="2">L</i>
+                    <p><b>Lina <em>TAKİP</em></b><span>Hediye şablonu harika olmuş.</span><small>05:43</small></p>
+                  </article>
+                  <article class="showcase-chat-gift">
+                    <i class="fake-avatar" data-avatar="5">D</i>
+                    <p><b>Deniz</b><span><strong>💖</strong> El Kalp ×5</span><small>148 jeton</small></p>
+                  </article>
+                </div>
+
+                <aside class="showcase-joins" aria-label="Yayına katılanlar">
+                  <article><i class="fake-avatar" data-avatar="6">M</i><p><b>Mira</b><span>yayına katıldı</span></p></article>
+                  <article><i class="fake-avatar" data-avatar="7">L</i><p><b>Leyla</b><span>yayına katıldı</span></p></article>
+                  <article><i class="fake-avatar" data-avatar="8">S</i><p><b>Selin</b><span>yayına katıldı</span></p></article>
+                  <article><i class="fake-avatar" data-avatar="5">D</i><p><b>Deniz</b><span>yayına katıldı</span></p></article>
+                  <article><i class="fake-avatar" data-avatar="1">A</i><p><b>Arda</b><span>yayına katıldı</span></p></article>
+                  <article><i class="fake-avatar" data-avatar="9">N</i><p><b>Nehir</b><span>yayına katıldı</span></p></article>
+                </aside>
+              </div>
+            </section>
+          </div>
         </div>
 
-        <div class="studio-showcase__note"><i></i><span>Yayın ekranı, sohbet ve izleyici alanları tek çalışma yüzeyinde.</span><strong>Profil içerikleri temsilidir.</strong></div>
+        <div class="studio-showcase__features" aria-label="Canlı demo özellikleri">
+          <span><b>48 bant</b> sese tepki veren müzik ritmi</span>
+          <span><b>İlk 6 görünür</b> 100 kişiye kadar etkinlik takibi</span>
+          <span><b>Alttan yukarı</b> aranabilir ve filtrelenebilir sohbet</span>
+          <span><b>720p / 1080p</b> dikey ve yatay yayın yüzeyi</span>
+        </div>
+        <div class="studio-showcase__note"><i></i><span>Yayın tuvali, sohbet, aktiflik, müzik ve kontrol yüzeyleri gerçek program düzenindedir.</span><strong>Yalnızca adlar ve profil görselleri kurgusaldır.</strong></div>
       </div>
     </section>
 
@@ -210,8 +236,8 @@
       <div class="hlx-app hlx-app--chat" aria-label="Canlı sohbet, aktif izleyiciler ve hediye kombosu animasyonu">
         <div class="hlx-app__top hlx-app__top--music">
           <div class="hlx-publisher hlx-publisher--online">
-            <span class="hlx-record hlx-record--rhythm"><img src="/assets/oxo-logo-192.png" alt=""><i></i><i></i><i></i><i></i></span>
-            <strong>HALİLOXO</strong>
+            <span class="hlx-record hlx-record--rhythm"><img src="/assets/fictional-publisher.webp" alt="Temsili yayıncı profili"><i></i><i></i><i></i><i></i></span>
+            <strong>NOVA REX</strong>
           </div>
           <div class="hlx-active-head">
             <span>AKTİF İZLEYİCİLER</span>
@@ -240,7 +266,7 @@
             <div class="hlx-gift-combo">
               <span class="hlx-gift-combo__avatar">H</span>
               <i>💖</i>
-              <div><small>HALİLOXO</small><strong>El Kalp <b>×5</b></strong><em>740 jeton</em></div>
+              <div><small>NOVA REX</small><strong>El Kalp <b>×5</b></strong><em>740 jeton</em></div>
             </div>
             <div class="hlx-chat-messages">
               <article class="hlx-message hlx-message--one">
@@ -281,11 +307,11 @@
         <div class="hlx-app__top hlx-app__top--music">
           <div class="hlx-publisher hlx-publisher--online hlx-publisher--music">
             <span class="hlx-record hlx-record--rhythm">
-              <img src="/assets/oxo-logo-192.png" alt="">
+              <img src="/assets/fictional-publisher.webp" alt="Temsili yayıncı profili">
               <i></i><i></i><i></i><i></i><i></i><i></i>
               <button class="previous">‹</button><button class="play">Ⅱ</button><button class="next">›</button>
             </span>
-            <div><small>ŞU ANDA ÇALIYOR</small><strong>Mehter Marşı</strong><em>Haliloxo çalma listesi</em></div>
+            <div><small>ŞU ANDA ÇALIYOR</small><strong>Gece Akışı</strong><em>Nova çalma listesi</em></div>
           </div>
         </div>
         <div class="hlx-app__workspace">
@@ -375,8 +401,8 @@
       <div class="hlx-app hlx-app--trigger" aria-label="Hediye ile medya tetikleme animasyonu">
         <div class="hlx-app__top">
           <div class="hlx-publisher hlx-publisher--online">
-            <span class="hlx-record"><img src="/assets/oxo-logo-192.png" alt=""></span>
-            <strong>HALİLOXO</strong>
+            <span class="hlx-record"><img src="/assets/fictional-publisher.webp" alt="Temsili yayıncı profili"></span>
+            <strong>NOVA REX</strong>
           </div>
         </div>
         <div class="hlx-app__workspace">
@@ -416,7 +442,7 @@
             <div class="hlx-trigger-media">
               <div class="trigger-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
               <img src="/assets/oxo-logo-192.png" alt="">
-              <p><span>HALİLOXO</span> Teşekkürler!</p>
+              <p><span>NOVA REX</span> Teşekkürler!</p>
             </div>
           </div>
           <aside class="hlx-layers">

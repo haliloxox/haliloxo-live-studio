@@ -142,9 +142,155 @@ function setupContentProtection() {
   }, { capture: true });
 }
 
+function setupShowcaseMusicDemo() {
+  const showcase = document.querySelector(".studio-showcase");
+  const ring = showcase?.querySelector(".showcase-rhythm-ring");
+  const title = showcase?.querySelector(".showcase-publisher-copy strong");
+  const pause = showcase?.querySelector(".showcase-music-pause");
+  const stop = showcase?.querySelector(".showcase-music-stop");
+  const previous = showcase?.querySelector(".showcase-music-previous");
+  const next = showcase?.querySelector(".showcase-music-next");
+  const chatToggle = showcase?.querySelector("[data-showcase-chat-toggle]");
+  const ttsToggle = showcase?.querySelector("[data-showcase-tts-toggle]");
+  const activeViewers = showcase?.querySelector(".showcase-active-viewers");
+  if (!showcase || !ring || !title) return;
+
+  const tracks = [
+    { title: "Gece Akışı", artist: "Nova", hue: 188 },
+    { title: "Düşler Rotası", artist: "Atlas", hue: 278 },
+    { title: "Neon Yağmuru", artist: "Mira", hue: 334 },
+  ];
+  let trackIndex = 0;
+  const rhythmBars = [];
+  let showcaseVisible = true;
+  let lastSpectrumFrame = 0;
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+  for (let index = 0; index < 48; index += 1) {
+    const bar = document.createElement("i");
+    const frequencyPosition = index / 47;
+    const hue =
+      frequencyPosition < 0.28
+        ? 8 + (frequencyPosition / 0.28) * 54
+        : frequencyPosition < 0.68
+          ? 118 + ((frequencyPosition - 0.28) / 0.4) * 100
+          : 238 + ((frequencyPosition - 0.68) / 0.32) * 94;
+    bar.style.setProperty("--rhythm-index", String(index));
+    bar.style.setProperty("--rhythm-hue", hue.toFixed(1));
+    bar.style.setProperty(
+      "--rhythm-beat",
+      String((0.52 + ((index * 17) % 11) / 10).toFixed(2)),
+    );
+    bar.style.setProperty(
+      "--rhythm-delay",
+      `${-((index * 73) % 1100)}ms`,
+    );
+    ring.appendChild(bar);
+    rhythmBars.push(bar);
+  }
+
+  const updateSpectrum = (time) => {
+    if (
+      showcaseVisible &&
+      !reduceMotion &&
+      showcase.classList.contains("showcase-music-playing") &&
+      !showcase.classList.contains("showcase-music-stopped") &&
+      time - lastSpectrumFrame >= 45
+    ) {
+      const seconds = time / 1000;
+      const bass = .38 + Math.abs(Math.sin(seconds * 2.15)) * .82;
+      const mid = .3 + Math.abs(Math.sin(seconds * 3.7 + .8)) * .68;
+      const treble = .22 + Math.abs(Math.sin(seconds * 5.3 + 1.9)) * .54;
+
+      rhythmBars.forEach((bar, index) => {
+        const position = index / 47;
+        const group = position < .28 ? bass : position < .68 ? mid : treble;
+        const wave =
+          Math.sin(seconds * (4.4 + position * 3.2) + index * .64) * .16 +
+          Math.sin(seconds * 2.1 + index * .23) * .1;
+        const scale = Math.max(.28, Math.min(1.48, group + wave));
+        bar.style.setProperty("--rhythm-scale", scale.toFixed(2));
+        bar.style.opacity = String(Math.max(.58, Math.min(1, .7 + scale * .22)));
+      });
+      lastSpectrumFrame = time;
+    }
+    requestAnimationFrame(updateSpectrum);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        showcaseVisible = Boolean(entry?.isIntersecting);
+      },
+      { rootMargin: "180px 0px" },
+    );
+    observer.observe(showcase);
+  }
+  requestAnimationFrame(updateSpectrum);
+
+  const renderTrack = () => {
+    const track = tracks[trackIndex];
+    const label = `${track.title}\u00a0 • \u00a0${track.artist}`;
+    title.replaceChildren();
+    [0, 1].forEach(() => {
+      const copy = document.createElement("i");
+      copy.textContent = label;
+      title.appendChild(copy);
+    });
+    showcase.style.setProperty("--showcase-track-hue", String(track.hue));
+    showcase.classList.add("showcase-music-playing");
+    showcase.classList.remove("showcase-music-stopped");
+    if (pause) pause.textContent = "Ⅱ";
+  };
+
+  const changeTrack = (direction) => {
+    trackIndex = (trackIndex + direction + tracks.length) % tracks.length;
+    renderTrack();
+  };
+
+  previous?.addEventListener("click", () => changeTrack(-1));
+  next?.addEventListener("click", () => changeTrack(1));
+  pause?.addEventListener("click", () => {
+    const playing = showcase.classList.toggle("showcase-music-playing");
+    showcase.classList.remove("showcase-music-stopped");
+    pause.textContent = playing ? "Ⅱ" : "▶";
+  });
+  stop?.addEventListener("click", () => {
+    showcase.classList.remove("showcase-music-playing");
+    showcase.classList.add("showcase-music-stopped");
+    title.replaceChildren();
+    const copy = document.createElement("i");
+    copy.textContent = "NOVA REX";
+    title.appendChild(copy);
+    if (pause) pause.textContent = "▶";
+  });
+
+  chatToggle?.setAttribute("aria-pressed", "true");
+  chatToggle?.addEventListener("click", () => {
+    const active = chatToggle.classList.toggle("active");
+    showcase.classList.toggle("showcase-chat-hidden", !active);
+    chatToggle.setAttribute("aria-pressed", String(active));
+  });
+
+  ttsToggle?.setAttribute("aria-pressed", "true");
+  ttsToggle?.addEventListener("click", () => {
+    const active = ttsToggle.classList.toggle("active");
+    ttsToggle.setAttribute("aria-pressed", String(active));
+  });
+
+  activeViewers?.addEventListener("wheel", (event) => {
+    if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+    event.preventDefault();
+    activeViewers.scrollLeft += event.deltaY;
+  }, { passive: false });
+
+  renderTrack();
+}
+
 hydrateLatestRelease();
 setupNavigation();
 setupHeader();
 setupReveal();
 setupCopyButtons();
 setupContentProtection();
+setupShowcaseMusicDemo();
