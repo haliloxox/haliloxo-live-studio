@@ -129,78 +129,88 @@
       <div class="scroll-cue" aria-hidden="true"><span></span>CANLI DEMO</div>
     </section>
 
-    <section class="visual-story connect-story" aria-labelledby="connect-title">
+    <section class="visual-story connect-story real-studio-story" aria-labelledby="connect-title">
       <header class="visual-story__heading">
         <span>01</span>
-        <div><p>BAĞLANTI</p><h2 id="connect-title">Kullanıcı adını yaz.<br>Yayının canlansın.</h2></div>
+        <div><p>GERÇEK PROGRAM GÖRÜNÜMÜ</p><h2 id="connect-title">Sahnen nasıl görünüyorsa.<br>İzleyicin de onu görür.</h2></div>
       </header>
 
-      <div class="connect-demo" aria-label="TikTok kullanıcı adına bağlanma animasyonu">
-        <div class="connect-demo__glow" aria-hidden="true"></div>
-        <div class="hlx-app hlx-app--connect">
-          <div class="hlx-app__top">
-            <div class="hlx-publisher">
-              <span class="hlx-record"><img src="/assets/oxo-logo-192.png" alt=""></span>
-              <strong>Haliloxo Live Studio</strong>
+      <div class="real-studio-demo" aria-label="Haliloxo Live Studio programının HTML ve CSS ile hazırlanmış örnek görünümü">
+        <div class="real-studio-window">
+          <header class="real-studio-topbar">
+            <div class="real-studio-brand">
+              <img src="/assets/oxo-logo-192.png" alt="">
+              <span><strong>Haliloxo Live Studio</strong><small>Yayın Ekranı</small></span>
             </div>
-          </div>
-          <div class="hlx-app__workspace">
-            <nav class="hlx-rail" aria-label="Program menüsü">
-              <button class="active" aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
-              <button aria-label="Hediye"><span>◇</span></button>
-              <button aria-label="Olay ve tetik"><span>⚡</span></button>
-              <button aria-label="Sohbet"><span>▱</span></button>
-              <button aria-label="Beğenme"><span>♡</span></button>
-              <button aria-label="TTS"><span>◖</span></button>
-              <button aria-label="Müzik"><span>♫</span></button>
-              <button aria-label="Katmanlar"><span>▤</span></button>
+            <div class="real-studio-status"><i></i><span>Canlı veriler bağlı</span><b>720 × 1280</b></div>
+          </header>
+
+          <div class="real-studio-body">
+            <nav class="real-studio-rail" aria-label="Program menüsü">
+              <button aria-label="TikTok yayın bağlantısı">⌁</button>
+              <button aria-label="Hediye">◇</button>
+              <button aria-label="Olay ve tetik">⚡</button>
+              <button aria-label="Sohbet">▱</button>
+              <button class="active" aria-label="Beğenme">♡</button>
+              <button aria-label="TTS">◖</button>
+              <button aria-label="Müzik">♫</button>
+              <button aria-label="Katmanlar">▤</button>
             </nav>
-            <section class="hlx-settings">
-              <header><span>GENEL AYARLAR</span><strong>TikTok Yayın Bağlantısı</strong></header>
-              <div class="hlx-settings__scroll">
-                <section class="hlx-card">
-                  <small>TIKTOK KULLANICI ADI</small>
-                  <div class="hlx-input"><b>@</b><span class="typed-username">haliloxox</span><i></i></div>
-                  <div class="hlx-connect-state"><span></span><b class="state-wait">Bağlanıyor</b><b class="state-ready">Yayına bağlandı</b></div>
-                </section>
-                <section class="hlx-account-card">
-                  <img src="/assets/oxo-logo-192.png" alt="">
-                  <div><strong>HALİLOXO</strong><span>@haliloxox</span></div>
-                  <dl><div><dt>Takipçi</dt><dd>42,8 B</dd></div><div><dt>Takip</dt><dd>318</dd></div><div><dt>Beğeni</dt><dd>1,2 Mn</dd></div></dl>
-                </section>
-                <section class="hlx-card hlx-broadcast-info">
-                  <small>YAYIN BİLGİLERİ</small>
-                  <div><button class="selected">Otomatik gir</button><button>Elle gir</button></div>
-                  <button class="hlx-primary">CANLI Yayın Yap</button>
-                </section>
-                <section class="hlx-card hlx-devices">
-                  <small>AYGITLAR</small>
-                  <label><span>Kamera</span><b>Sistem varsayılanı</b></label>
-                  <label><span>Mikrofon</span><b>Sistem varsayılanı</b></label>
-                  <label><span>Masaüstü sesi</span><b>Sistem varsayılanı</b></label>
-                </section>
+
+            <aside class="real-studio-settings">
+              <header><small>GENEL AYARLAR</small><strong>Beğeni Listesi</strong></header>
+              <div class="real-setting-card">
+                <span>Gösterilecek kişi</span><b>5</b>
+                <i style="--level:72%"></i>
               </div>
-            </section>
-            <div class="hlx-canvas">
-              <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
-              <div class="hlx-canvas__center">
-                <img src="/assets/oxo-logo-192.png" alt="">
-                <span>Yayın ekranı</span>
-                <small>720 × 1280</small>
+              <div class="real-setting-card">
+                <span>Profil büyüklüğü</span><b>56 px</b>
+                <i style="--level:64%"></i>
               </div>
-              <div class="hlx-gift-row" aria-hidden="true"><i>🌹</i><i>💖</i><i>🎂</i><i>🎤</i><i>👑</i></div>
-            </div>
-            <aside class="hlx-side-preview">
-              <div class="hlx-mini-viewers"><i>H</i><i>S</i><i>M</i><i>E</i></div>
-              <div class="hlx-mini-chat">
-                <p><i>S</i><span><b>Selin</b> Yayın çok iyi görünüyor</span></p>
-                <p><i>M</i><span><b>Mert</b> Hazırız 🔥</span></p>
+              <div class="real-setting-card">
+                <span>İsim büyüklüğü</span><b>25 px</b>
+                <i style="--level:50%"></i>
               </div>
-              <div class="hlx-quick"><button>▱</button><button>◖</button></div>
+              <div class="real-setting-switch"><span>Bot tespiti</span><i></i></div>
+              <div class="real-setting-switch"><span>Beğeni hatırlatması</span><i></i></div>
+              <button class="real-reset-button">Listeyi sıfırla</button>
+            </aside>
+
+            <main class="real-studio-stage-wrap">
+              <div class="real-studio-stage-label"><span>YAYIN EKRANI</span><b>720 × 1280</b></div>
+              <div class="real-broadcast-screen">
+                <img class="real-scene-streamer" src="/assets/live-scene-streamer.webp" alt="Yayın sahnesindeki oyun yayıncısı illüstrasyonu">
+                <img class="real-scene-gameplay" src="/assets/live-scene-gameplay.webp" alt="Yayın sahnesindeki oyun görüntüsü">
+
+                <div class="real-like-list" aria-label="Temsili beğeni listesi">
+                  <article><b>1</b><i class="fake-avatar fake-avatar--violet">A</i><span><strong>Arda</strong></span><em>♥ <small>486</small></em></article>
+                  <article><b>2</b><i class="fake-avatar fake-avatar--cyan">E</i><span><strong>Ece</strong></span><em>♥ <small>346</small></em></article>
+                  <article><b>3</b><i class="fake-avatar fake-avatar--orange">M</i><span><strong>Mert</strong></span><em>♥ <small>325</small></em></article>
+                  <article><b>4</b><i class="fake-avatar fake-avatar--pink">L</i><span><strong>Lina</strong></span><em>♥ <small>310</small></em></article>
+                  <article><b>5</b><i class="fake-avatar fake-avatar--green">D</i><span><strong>Deniz</strong></span><em>♥ <small>309</small></em></article>
+                </div>
+              </div>
+            </main>
+
+            <aside class="real-studio-chat">
+              <header><span>SOHBET</span><i></i></header>
+              <div class="real-active-users">
+                <b class="fake-avatar fake-avatar--orange">M</b>
+                <b class="fake-avatar fake-avatar--pink">L</b>
+                <b class="fake-avatar fake-avatar--green">D</b>
+                <b class="fake-avatar fake-avatar--cyan">E</b>
+                <span>+12</span>
+              </div>
+              <div class="real-chat-feed">
+                <article><i class="fake-avatar fake-avatar--cyan">E</i><p><b>Ece <em>TAKİP</em></b><span>Yayın çok net görünüyor 🔥</span></p></article>
+                <article><i class="fake-avatar fake-avatar--orange">M</i><p><b>Mert <em>MOD</em></b><span>Yeni sahne hazır!</span></p></article>
+                <article class="real-gift-message"><i class="fake-avatar fake-avatar--pink">L</i><p><b>Lina</b><span><strong>💖</strong> El Kalp ×5</span><small>148 jeton</small></p></article>
+              </div>
+              <div class="real-chat-actions"><button class="on">▱</button><button class="on">◖</button></div>
             </aside>
           </div>
         </div>
-        <div class="connect-caption"><i></i><span>Profil, sohbet ve yayın verileri</span><strong>tek bağlantıda</strong></div>
+        <div class="real-studio-note"><i></i><span>Yayın sahnesi açık programdaki düzenle eşleşir.</span><strong>Profil görselleri temsilidir.</strong></div>
       </div>
     </section>
 
