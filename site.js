@@ -142,6 +142,50 @@ function setupContentProtection() {
   }, { capture: true });
 }
 
+function setupLowerDemoSpectrum() {
+  const records = [...document.querySelectorAll(".hlx-record--rhythm")];
+
+  records.forEach((record) => {
+    record.querySelectorAll(":scope > i").forEach((bar) => bar.remove());
+
+    for (let index = 0; index < 48; index += 1) {
+      const bar = document.createElement("i");
+      const position = index / 47;
+      const hue =
+        position < 0.28
+          ? 8 + (position / 0.28) * 54
+          : position < 0.68
+            ? 118 + ((position - 0.28) / 0.4) * 100
+            : 238 + ((position - 0.68) / 0.32) * 94;
+      const scale = 0.55 + ((index * 17) % 11) / 10;
+
+      bar.className = "hlx-spectrum-bar";
+      bar.style.setProperty("--rhythm-index", String(index));
+      bar.style.setProperty("--rhythm-hue", hue.toFixed(1));
+      bar.style.setProperty("--rhythm-scale", scale.toFixed(2));
+      bar.style.setProperty("--rhythm-delay", `${-((index * 73) % 1100)}ms`);
+      record.appendChild(bar);
+    }
+  });
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle(
+            "hlx-spectrum-active",
+            entry.isIntersecting,
+          );
+        });
+      },
+      { rootMargin: "160px 0px" },
+    );
+    records.forEach((record) => observer.observe(record));
+  } else {
+    records.forEach((record) => record.classList.add("hlx-spectrum-active"));
+  }
+}
+
 function setupShowcaseMusicDemo() {
   const showcase = document.querySelector(".studio-showcase");
   const ring = showcase?.querySelector(".showcase-rhythm-ring");
@@ -293,4 +337,5 @@ setupHeader();
 setupReveal();
 setupCopyButtons();
 setupContentProtection();
+setupLowerDemoSpectrum();
 setupShowcaseMusicDemo();
