@@ -137,34 +137,67 @@
 
       <div class="connect-demo" aria-label="TikTok kullanıcı adına bağlanma animasyonu">
         <div class="connect-demo__glow" aria-hidden="true"></div>
-        <div class="studio-demo">
-          <div class="studio-demo__bar">
-            <span><img src="/assets/oxo-logo-192.png" alt="">Haliloxo Live Studio</span>
-            <div><i></i><i></i><i></i></div>
+        <div class="hlx-app hlx-app--connect">
+          <div class="hlx-app__top">
+            <div class="hlx-publisher">
+              <span class="hlx-record"><img src="/assets/oxo-logo-192.png" alt=""></span>
+              <strong>Haliloxo Live Studio</strong>
+            </div>
           </div>
-          <div class="studio-demo__body">
-            <div class="studio-demo__menu" aria-hidden="true">
-              <b></b><b></b><b></b><b></b><b></b>
-            </div>
-            <div class="connection-card">
-              <div class="connection-card__label"><span></span>TikTok canlı bağlantısı</div>
-              <div class="username-field">
-                <i>@</i>
-                <span class="typed-username">haliloxox</span>
-                <b></b>
+          <div class="hlx-app__workspace">
+            <nav class="hlx-rail" aria-label="Program menüsü">
+              <button class="active" aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
+              <button aria-label="Hediye"><span>◇</span></button>
+              <button aria-label="Olay ve tetik"><span>⚡</span></button>
+              <button aria-label="Sohbet"><span>▱</span></button>
+              <button aria-label="Beğenme"><span>♡</span></button>
+              <button aria-label="TTS"><span>◖</span></button>
+              <button aria-label="Müzik"><span>♫</span></button>
+              <button aria-label="Katmanlar"><span>▤</span></button>
+            </nav>
+            <section class="hlx-settings">
+              <header><span>GENEL AYARLAR</span><strong>TikTok Yayın Bağlantısı</strong></header>
+              <div class="hlx-settings__scroll">
+                <section class="hlx-card">
+                  <small>TIKTOK KULLANICI ADI</small>
+                  <div class="hlx-input"><b>@</b><span class="typed-username">haliloxox</span><i></i></div>
+                  <div class="hlx-connect-state"><span></span><b class="state-wait">Bağlanıyor</b><b class="state-ready">Yayına bağlandı</b></div>
+                </section>
+                <section class="hlx-account-card">
+                  <img src="/assets/oxo-logo-192.png" alt="">
+                  <div><strong>HALİLOXO</strong><span>@haliloxox</span></div>
+                  <dl><div><dt>Takipçi</dt><dd>42,8 B</dd></div><div><dt>Takip</dt><dd>318</dd></div><div><dt>Beğeni</dt><dd>1,2 Mn</dd></div></dl>
+                </section>
+                <section class="hlx-card hlx-broadcast-info">
+                  <small>YAYIN BİLGİLERİ</small>
+                  <div><button class="selected">Otomatik gir</button><button>Elle gir</button></div>
+                  <button class="hlx-primary">CANLI Yayın Yap</button>
+                </section>
+                <section class="hlx-card hlx-devices">
+                  <small>AYGITLAR</small>
+                  <label><span>Kamera</span><b>Sistem varsayılanı</b></label>
+                  <label><span>Mikrofon</span><b>Sistem varsayılanı</b></label>
+                  <label><span>Masaüstü sesi</span><b>Sistem varsayılanı</b></label>
+                </section>
               </div>
-              <div class="connection-progress"><span></span></div>
-              <div class="connection-state">
-                <i></i>
-                <span class="state-wait">Bağlanıyor</span>
-                <span class="state-ready">Yayına bağlandı</span>
+            </section>
+            <div class="hlx-canvas">
+              <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
+              <div class="hlx-canvas__center">
+                <img src="/assets/oxo-logo-192.png" alt="">
+                <span>Yayın ekranı</span>
+                <small>720 × 1280</small>
               </div>
+              <div class="hlx-gift-row" aria-hidden="true"><i>🌹</i><i>💖</i><i>🎂</i><i>🎤</i><i>👑</i></div>
             </div>
-            <div class="connected-profile">
-              <img src="/assets/oxo-logo-192.png" alt="">
-              <div><small>YAYINCI</small><strong>haliloxox</strong><span>@haliloxox</span></div>
-              <b>CANLI</b>
-            </div>
+            <aside class="hlx-side-preview">
+              <div class="hlx-mini-viewers"><i>H</i><i>S</i><i>M</i><i>E</i></div>
+              <div class="hlx-mini-chat">
+                <p><i>S</i><span><b>Selin</b> Yayın çok iyi görünüyor</span></p>
+                <p><i>M</i><span><b>Mert</b> Hazırız 🔥</span></p>
+              </div>
+              <div class="hlx-quick"><button>▱</button><button>◖</button></div>
+            </aside>
           </div>
         </div>
         <div class="connect-caption"><i></i><span>Profil, sohbet ve yayın verileri</span><strong>tek bağlantıda</strong></div>
@@ -177,48 +210,64 @@
         <div><p>SOHBET</p><h2 id="chat-title">Yayın hareket eder.<br>Her şey aynı yerde görünür.</h2></div>
       </header>
 
-      <div class="chat-demo" aria-label="Canlı sohbet, aktif izleyiciler ve hediye kombosu animasyonu">
-        <div class="chat-demo__active">
-          <p>AKTİF İZLEYİCİLER <span>6</span></p>
-          <div class="viewer-row">
-            <span class="viewer viewer-1"><i>HA</i><b>740</b></span>
-            <span class="viewer viewer-2"><i>SE</i><b>520</b></span>
-            <span class="viewer viewer-3"><i>ME</i><b>310</b></span>
-            <span class="viewer viewer-4"><i>ZE</i><b>180</b></span>
-            <span class="viewer viewer-5"><i>CA</i><b>95</b></span>
-            <span class="viewer viewer-6"><i>EY</i><b>40</b></span>
+      <div class="hlx-app hlx-app--chat" aria-label="Canlı sohbet, aktif izleyiciler ve hediye kombosu animasyonu">
+        <div class="hlx-app__top hlx-app__top--music">
+          <div class="hlx-publisher hlx-publisher--online">
+            <span class="hlx-record hlx-record--rhythm"><img src="/assets/oxo-logo-192.png" alt=""><i></i><i></i><i></i><i></i></span>
+            <strong>HALİLOXO</strong>
+          </div>
+          <div class="hlx-active-head">
+            <span>AKTİF İZLEYİCİLER</span>
+            <div><i class="viewer-1">H<small>740</small></i><i class="viewer-2">S<small>520</small></i><i class="viewer-3">M<small>310</small></i><i class="viewer-4">E<small>180</small></i><i class="viewer-5">C<small>95</small></i><i class="viewer-6">D<small>40</small></i></div>
           </div>
         </div>
-
-        <div class="chat-demo__screen">
-          <div class="chat-stage">
-            <div class="live-corner"><i></i>CANLI <span>1.284</span></div>
-            <div class="gift-combo">
-              <div class="gift-combo__orb"><span>♥</span></div>
-              <div><small>HALİLOXO</small><strong>El Kalp</strong><span>740 jeton</span></div>
-              <b>×5</b>
+        <div class="hlx-app__workspace">
+          <nav class="hlx-rail" aria-label="Program menüsü">
+            <button aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
+            <button aria-label="Hediye"><span>◇</span></button>
+            <button aria-label="Olay ve tetik"><span>⚡</span></button>
+            <button class="active" aria-label="Sohbet"><span>▱</span></button>
+            <button aria-label="Beğenme"><span>♡</span></button>
+            <button aria-label="TTS"><span>◖</span></button>
+            <button aria-label="Müzik"><span>♫</span></button>
+            <button aria-label="Katmanlar"><span>▤</span></button>
+          </nav>
+          <div class="hlx-canvas">
+            <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
+            <div class="hlx-gift-template">
+              <span><i>🌹</i><b>Gül</b></span><span><i>💖</i><b>El Kalp</b></span><span><i>🎂</i><b>Pasta Dilimi</b></span><span><i>🎤</i><b>Mikrofon</b></span>
             </div>
-            <div class="chat-message chat-message--one">
-              <i class="message-avatar aqua-avatar">S</i>
-              <div><span><strong>Selin</strong><em>MOD</em></span><p>Yayın çok iyi görünüyor 🔥</p></div>
-            </div>
-            <div class="chat-message chat-message--two">
-              <i class="message-avatar violet-avatar">M</i>
-              <div><span><strong>Mert</strong><em>TAKİP</em></span><p>Bu şarkının adı ne?</p></div>
-            </div>
-            <div class="chat-message chat-message--three">
-              <i class="message-avatar gold-avatar">E</i>
-              <div><span><strong>Elif</strong><em>HAYRAN</em></span><p>El Kalp gönderdi <b>×5</b></p><small>148 jeton</small></div>
-            </div>
+            <div class="hlx-like-widget"><b>♡</b><span>Selin</span><strong>12.480</strong></div>
           </div>
-          <aside class="join-stream">
-            <p>YAYINA KATILDI</p>
-            <div class="join-person join-one"><i>A</i><span><b>Ayşe</b><small>şimdi katıldı</small></span></div>
-            <div class="join-person join-two"><i>B</i><span><b>Burak</b><small>şimdi katıldı</small></span></div>
-            <div class="join-person join-three"><i>D</i><span><b>Deniz</b><small>şimdi katıldı</small></span></div>
-          </aside>
+          <section class="hlx-chat-surface">
+            <div class="hlx-gift-combo">
+              <span class="hlx-gift-combo__avatar">H</span>
+              <i>💖</i>
+              <div><small>HALİLOXO</small><strong>El Kalp <b>×5</b></strong><em>740 jeton</em></div>
+            </div>
+            <div class="hlx-chat-messages">
+              <article class="hlx-message hlx-message--one">
+                <i class="viewer-2">S</i>
+                <div><header><strong>Selin</strong><em>MOD</em><em>TAKİP</em><time>21:14</time></header><p>Yayın çok iyi görünüyor 🔥</p></div>
+              </article>
+              <article class="hlx-message hlx-message--two">
+                <i class="viewer-3">M</i>
+                <div><header><strong>Mert</strong><em>HAYRAN</em><time>21:15</time></header><p>Bu şarkının adı ne?</p></div>
+              </article>
+              <article class="hlx-message hlx-message--gift">
+                <i class="viewer-4">E</i>
+                <div><header><strong>Elif</strong><em>SÜPER HAYRAN</em><time>21:15</time></header><p><span class="hlx-gift-visual">💖<small>148</small></span><b>El Kalp</b><strong>×5 · 740</strong></p></div>
+              </article>
+            </div>
+            <aside class="hlx-joins">
+              <span>YAYINA KATILDI</span>
+              <p class="join-one"><i>A</i><b>Ayşe</b></p>
+              <p class="join-two"><i>B</i><b>Burak</b></p>
+              <p class="join-three"><i>D</i><b>Deniz</b></p>
+            </aside>
+            <div class="hlx-quick"><button class="on">▱</button><button class="on">◖</button></div>
+          </section>
         </div>
-
         <div class="chat-demo__labels" aria-hidden="true">
           <span>Mesajlar</span><span>Hediye kombosu</span><span>Aktif kişiler</span><span>Katılanlar</span>
         </div>
@@ -231,52 +280,70 @@
         <div><p>TTS &amp; MÜZİK</p><h2 id="audio-title">Sen konuş.<br>Sesler sana yer açsın.</h2></div>
       </header>
 
-      <div class="ducking-demo" aria-label="Yayıncı konuşurken müzik ve TTS seslerinin otomatik azalması animasyonu">
-        <div class="broadcaster-card">
-          <div class="broadcaster-figure" aria-hidden="true">
-            <div class="person-head"><i></i><b></b></div>
-            <div class="person-body"></div>
-            <div class="person-mic"><i></i><b></b></div>
-            <div class="voice-ring ring-one"></div>
-            <div class="voice-ring ring-two"></div>
-            <div class="voice-ring ring-three"></div>
-          </div>
-          <div class="broadcaster-status">
-            <i></i>
-            <span class="status-listening">Ses bekleniyor</span>
-            <span class="status-speaking">Yayıncı konuşuyor</span>
-          </div>
-          <div class="decibel-meter" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <div class="hlx-app hlx-app--audio" aria-label="Yayıncı konuşurken müzik ve TTS seslerinin otomatik azalması animasyonu">
+        <div class="hlx-app__top hlx-app__top--music">
+          <div class="hlx-publisher hlx-publisher--online hlx-publisher--music">
+            <span class="hlx-record hlx-record--rhythm">
+              <img src="/assets/oxo-logo-192.png" alt="">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+              <button class="previous">‹</button><button class="play">Ⅱ</button><button class="next">›</button>
+            </span>
+            <div><small>ŞU ANDA ÇALIYOR</small><strong>Mehter Marşı</strong><em>Haliloxo çalma listesi</em></div>
           </div>
         </div>
-
-        <div class="audio-route" aria-hidden="true">
-          <span></span><i></i><span></span>
-        </div>
-
-        <div class="ducking-channels">
-          <article class="channel-card channel-tts">
-            <div class="channel-icon">T</div>
-            <div class="channel-copy"><small>DOĞAL SES</small><strong>TTS</strong></div>
-            <div class="channel-level">
-              <span><i></i></span>
-              <b class="level-open">%72</b>
-              <b class="level-ducked">%18</b>
+        <div class="hlx-app__workspace">
+          <nav class="hlx-rail" aria-label="Program menüsü">
+            <button aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
+            <button aria-label="Hediye"><span>◇</span></button>
+            <button aria-label="Olay ve tetik"><span>⚡</span></button>
+            <button aria-label="Sohbet"><span>▱</span></button>
+            <button aria-label="Beğenme"><span>♡</span></button>
+            <button class="active" aria-label="TTS"><span>◖</span></button>
+            <button aria-label="Müzik"><span>♫</span></button>
+            <button aria-label="Katmanlar"><span>▤</span></button>
+          </nav>
+          <section class="hlx-settings hlx-settings--tts">
+            <header><span>GENEL AYARLAR</span><strong>TTS Sesli Okuma</strong></header>
+            <div class="hlx-settings__scroll">
+              <section class="hlx-card">
+                <small>KİMLER OKUNACAK</small>
+                <button class="hlx-choice">Herkes, takipçi, moderatör <b>⌄</b></button>
+              </section>
+              <section class="hlx-card">
+                <small>OKUMA AYARLARI</small>
+                <label class="hlx-setting-row"><span>Okuma hızı</span><input type="range" min="0" max="100" value="58"><b>1.05×</b></label>
+                <label class="hlx-setting-row"><span>Doğal duraklama</span><i class="hlx-toggle on"></i></label>
+                <label class="hlx-setting-row"><span>Emoji ve sembolleri oku</span><i class="hlx-toggle"></i></label>
+              </section>
+              <section class="hlx-card hlx-voice-card">
+                <small>YAYINCI KONUŞMA ALGILAMASI <em>PRO</em></small>
+                <label class="hlx-setting-row"><span>Ben konuşurken TTS sesini kıs</span><i class="hlx-toggle on"></i></label>
+                <div class="hlx-mic-line">
+                  <span class="status-listening">Ses bekleniyor</span><span class="status-speaking">Yayıncı konuşuyor</span>
+                  <div class="hlx-db-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                  <b>-24 dB</b>
+                </div>
+                <label class="hlx-setting-row"><span>Konuşurken TTS seviyesi</span><input class="duck-range duck-range--tts" type="range" min="0" max="100" value="18"><b><span class="level-open">%72</span><span class="level-ducked">%18</span></b></label>
+                <label class="hlx-setting-row"><span>Konuşurken müzik seviyesi</span><input class="duck-range duck-range--music" type="range" min="0" max="100" value="12"><b><span class="level-open">%64</span><span class="level-ducked">%12</span></b></label>
+              </section>
             </div>
-            <div class="tiny-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          </article>
-          <article class="channel-card channel-music">
-            <div class="channel-icon">♪</div>
-            <div class="channel-copy"><small>ŞİMDİ ÇALIYOR</small><strong>Müzik</strong></div>
-            <div class="channel-level">
-              <span><i></i></span>
-              <b class="level-open">%64</b>
-              <b class="level-ducked">%12</b>
+          </section>
+          <div class="hlx-canvas hlx-canvas--audio">
+            <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
+            <div class="hlx-speech-signal"><i></i><span></span><span></span><span></span></div>
+            <div class="hlx-audio-result">
+              <article><b>◖</b><span>TTS</span><em class="level-open">%72</em><em class="level-ducked">%18</em><i></i></article>
+              <article><b>♫</b><span>Müzik</span><em class="level-open">%64</em><em class="level-ducked">%12</em><i></i></article>
+              <p><i></i><span>Konuşma algılandı</span><strong>Sesler otomatik kısıldı</strong></p>
             </div>
-            <div class="tiny-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          </article>
-          <div class="ducking-note"><i></i><span>Konuşma algılandı</span><strong>Sesler otomatik kısıldı</strong></div>
+          </div>
+          <aside class="hlx-side-preview">
+            <div class="hlx-mini-chat">
+              <p><i>S</i><span><b>Selin</b> Merhaba, nasılsın?</span></p>
+              <p><i>M</i><span><b>Mert</b> Ses çok temiz geliyor</span></p>
+            </div>
+            <div class="hlx-quick"><button class="on">▱</button><button class="on">◖</button></div>
+          </aside>
         </div>
       </div>
     </section>
@@ -287,18 +354,60 @@
         <div><p>OLAY &amp; TETİK</p><h2 id="trigger-title">Hediye gelir.<br>Sahne cevap verir.</h2></div>
       </header>
 
-      <div class="trigger-demo" aria-label="Hediye ile medya tetikleme animasyonu">
-        <div class="trigger-gift">
-          <div class="trigger-gift__image">♥</div>
-          <small>EL KALP</small>
-          <strong>×1</strong>
+      <div class="hlx-app hlx-app--trigger" aria-label="Hediye ile medya tetikleme animasyonu">
+        <div class="hlx-app__top">
+          <div class="hlx-publisher hlx-publisher--online">
+            <span class="hlx-record"><img src="/assets/oxo-logo-192.png" alt=""></span>
+            <strong>HALİLOXO</strong>
+          </div>
         </div>
-        <div class="trigger-line"><i></i><span></span><b></b></div>
-        <div class="trigger-screen">
-          <div class="trigger-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <img src="/assets/oxo-logo-192.png" alt="">
-          <p><span>HALİLOXO</span> Teşekkürler!</p>
-          <div class="media-tags"><i>VİDEO</i><i>SES</i><i>YAZI</i></div>
+        <div class="hlx-app__workspace">
+          <nav class="hlx-rail" aria-label="Program menüsü">
+            <button aria-label="TikTok yayın bağlantısı"><span>⌁</span></button>
+            <button aria-label="Hediye"><span>◇</span></button>
+            <button class="active" aria-label="Olay ve tetik"><span>⚡</span></button>
+            <button aria-label="Sohbet"><span>▱</span></button>
+            <button aria-label="Beğenme"><span>♡</span></button>
+            <button aria-label="TTS"><span>◖</span></button>
+            <button aria-label="Müzik"><span>♫</span></button>
+            <button aria-label="Katmanlar"><span>▤</span></button>
+          </nav>
+          <section class="hlx-settings hlx-settings--event">
+            <header><span>GENEL AYARLAR</span><strong>Olay ve Tetik</strong></header>
+            <div class="hlx-settings__scroll">
+              <section class="hlx-event-card">
+                <header><span>El Kalp Teşekkürü</span><button>▶</button></header>
+                <div class="hlx-event-summary"><i>💖</i><span><small>TETİKLEYİCİ</small><strong>El Kalp</strong></span><b>×1</b></div>
+                <div class="hlx-event-media"><span>▣ Video</span><span>♫ Ses</span><span>T Yazı</span></div>
+              </section>
+              <button class="hlx-media-add">＋ Medya ekle</button>
+              <section class="hlx-card">
+                <small>KİMLER İÇİN</small>
+                <button class="hlx-choice">Herkes <b>⌄</b></button>
+              </section>
+              <section class="hlx-card">
+                <small>HAREKET VE SÜRE</small>
+                <label class="hlx-setting-row"><span>Gösterim süresi</span><b>5 saniye</b></label>
+                <label class="hlx-setting-row"><span>Sıradakini beklet</span><i class="hlx-toggle on"></i></label>
+              </section>
+            </div>
+          </section>
+          <div class="hlx-canvas hlx-canvas--trigger">
+            <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
+            <div class="hlx-trigger-gift"><i>💖</i><span><small>EL KALP</small><strong>×1</strong></span></div>
+            <div class="hlx-trigger-media">
+              <div class="trigger-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <img src="/assets/oxo-logo-192.png" alt="">
+              <p><span>HALİLOXO</span> Teşekkürler!</p>
+            </div>
+          </div>
+          <aside class="hlx-layers">
+            <header>KATMANLAR</header>
+            <p><i>▾</i><span>💖 El Kalp Teşekkürü</span><b>⚡</b></p>
+            <p class="child"><i></i><span>▣ Video</span><b>◉</b></p>
+            <p class="child"><i></i><span>♫ Ses</span><b>◉</b></p>
+            <p class="child"><i></i><span>T Yazı</span><b>◉</b></p>
+          </aside>
         </div>
       </div>
     </section>
