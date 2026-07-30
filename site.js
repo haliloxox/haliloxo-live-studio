@@ -111,8 +111,40 @@ function setupCopyButtons() {
   });
 }
 
+function setupContentProtection() {
+  document.querySelectorAll("img").forEach((image) => {
+    image.draggable = false;
+    image.setAttribute("draggable", "false");
+  });
+
+  const blockEvent = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  };
+
+  document.addEventListener("contextmenu", blockEvent, { capture: true });
+  document.addEventListener("dragstart", (event) => {
+    if (event.target instanceof HTMLImageElement) blockEvent(event);
+  }, { capture: true });
+  document.addEventListener("selectstart", blockEvent, { capture: true });
+  document.addEventListener("copy", blockEvent, { capture: true });
+  document.addEventListener("cut", blockEvent, { capture: true });
+
+  document.addEventListener("keydown", (event) => {
+    const key = String(event.key || "").toLowerCase();
+    const developerShortcut =
+      event.key === "F12" ||
+      ((event.ctrlKey || event.metaKey) && event.shiftKey &&
+        ["i", "j", "c", "k"].includes(key)) ||
+      ((event.ctrlKey || event.metaKey) && ["u", "s"].includes(key));
+
+    if (developerShortcut) blockEvent(event);
+  }, { capture: true });
+}
+
 hydrateLatestRelease();
 setupNavigation();
 setupHeader();
 setupReveal();
 setupCopyButtons();
+setupContentProtection();
