@@ -137,12 +137,12 @@
 
       <div class="real-studio-demo" aria-label="Haliloxo Live Studio programının HTML ve CSS ile hazırlanmış örnek görünümü">
         <div class="real-studio-window">
-          <header class="real-studio-topbar">
+          <header class="real-studio-topbar" aria-label="Yayıncı ve yayın durumu">
             <div class="real-studio-brand">
               <img src="/assets/oxo-logo-192.png" alt="">
-              <span><strong>Haliloxo Live Studio</strong><small>Yayın Ekranı</small></span>
+              <span><strong>Haliloxo Live Studio</strong><small>Yayıncı profili ve müzik alanı</small></span>
             </div>
-            <div class="real-studio-status"><i></i><span>Canlı veriler bağlı</span><b>720 × 1280</b></div>
+            <div class="real-studio-status"><i></i><span>Canlı veriler bağlı</span><b>720 × 1280 yayın yüzeyi</b></div>
           </header>
 
           <div class="real-studio-body">
@@ -340,7 +340,28 @@
           </section>
           <div class="hlx-canvas hlx-canvas--audio">
             <div class="hlx-canvas__controls"><i></i><i></i><i></i></div>
-            <div class="hlx-speech-signal"><i></i><span></span><span></span><span></span></div>
+            <div class="voice-ducking-scene" aria-hidden="true">
+              <div class="voice-speaker">
+                <div class="voice-speaker__body"></div>
+                <div class="voice-speaker__head">
+                  <i class="voice-speaker__nose"></i>
+                  <i class="voice-speaker__mouth"></i>
+                </div>
+                <div class="voice-speaker__waves"><i></i><i></i><i></i></div>
+              </div>
+              <div class="studio-microphone">
+                <i class="studio-microphone__capsule"></i>
+                <i class="studio-microphone__joint"></i>
+                <i class="studio-microphone__arm"></i>
+                <i class="studio-microphone__base"></i>
+              </div>
+              <div class="voice-state-copy">
+                <span class="voice-state-copy__speaking">Yayıncı konuşuyor</span>
+                <span class="voice-state-copy__silent">Yayıncı sustu</span>
+                <strong class="voice-state-copy__ducked">TTS ve müzik kısılıyor</strong>
+                <strong class="voice-state-copy__restored">TTS ve müzik yükseliyor</strong>
+              </div>
+            </div>
             <div class="hlx-audio-result">
               <article><b>◖</b><span>TTS</span><em class="level-open">%72</em><em class="level-ducked">%18</em><i></i></article>
               <article><b>♫</b><span>Müzik</span><em class="level-open">%64</em><em class="level-ducked">%12</em><i></i></article>
