@@ -331,6 +331,251 @@ function setupShowcaseMusicDemo() {
   renderTrack();
 }
 
+function loadGiftSpecialAnimationRuntime() {
+  if (window.StudioGiftSpecialAnimation?.create) {
+    return Promise.resolve(window.StudioGiftSpecialAnimation);
+  }
+
+  if (window.__giftSpecialAnimationRuntimePromise) {
+    return window.__giftSpecialAnimationRuntimePromise;
+  }
+
+  window.__giftSpecialAnimationRuntimePromise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "/assets/gift-special-animation.js";
+    script.async = true;
+    script.dataset.giftSpecialRuntime = "true";
+    script.addEventListener("load", () => {
+      if (window.StudioGiftSpecialAnimation?.create) {
+        resolve(window.StudioGiftSpecialAnimation);
+        return;
+      }
+      reject(new Error("Özel hediye animasyonu yüklenemedi."));
+    }, { once: true });
+    script.addEventListener("error", () => {
+      reject(new Error("Özel hediye animasyonu dosyası alınamadı."));
+    }, { once: true });
+    document.head.appendChild(script);
+  });
+
+  return window.__giftSpecialAnimationRuntimePromise;
+}
+
+function setupGiftSpecialAnimationDemo() {
+  const section = document.querySelector("[data-gift-special-demo]");
+  const app = section?.querySelector(".hlx-app--gift-special");
+  const host = section?.querySelector("[data-gift-special-host]");
+  const cursor = section?.querySelector("[data-gift-demo-cursor]");
+  const preset = section?.querySelector("[data-gift-demo-preset]");
+  const threshold = section?.querySelector("[data-gift-demo-threshold]");
+  const thresholdRow = threshold?.closest(".gift-special-row");
+  const addButton = section?.querySelector("[data-gift-demo-add]");
+  const status = section?.querySelector("[data-gift-demo-status]");
+  const testButton = addButton?.nextElementSibling;
+  if (!section || !app || !host || !cursor || !preset || !threshold || !addButton || !status) return;
+
+  const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  const timers = new Set();
+  let controller = null;
+  let visible = false;
+  let runId = 0;
+
+  const clearTimers = () => {
+    timers.forEach((timer) => clearTimeout(timer));
+    timers.clear();
+  };
+
+  const later = (callback, delay, expectedRun = runId) => {
+    const timer = setTimeout(() => {
+      timers.delete(timer);
+      if (!visible || expectedRun !== runId) return;
+      callback();
+    }, delay);
+    timers.add(timer);
+    return timer;
+  };
+
+  const setStatus = (text) => {
+    status.textContent = text;
+  };
+
+  const moveCursor = (target, duration = 780) => {
+    if (!target) return;
+    const appRect = app.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const x = targetRect.left - appRect.left + targetRect.width * .56;
+    const y = targetRect.top - appRect.top + targetRect.height * .5;
+    cursor.style.transitionDuration = `${duration}ms, 220ms`;
+    cursor.style.transform = `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`;
+    cursor.classList.add("is-visible");
+  };
+
+  const clickCursor = () => {
+    cursor.classList.remove("is-clicking");
+    void cursor.offsetWidth;
+    cursor.classList.add("is-clicking");
+  };
+
+  const resetVisuals = ({ keepThreshold = false } = {}) => {
+    controller?.stop?.();
+    app.classList.remove("has-widget", "has-gift", "is-playing", "is-complete");
+    addButton.classList.remove("is-pressed");
+    thresholdRow?.classList.remove("is-focused");
+    cursor.classList.remove("is-clicking");
+    cursor.classList.toggle("is-visible", !reduceMotion);
+    if (!keepThreshold) threshold.value = "";
+    setStatus("Hediye ayarı hazırlanıyor");
+  };
+
+  const playAnimation = async (expectedRun = runId) => {
+    if (!visible || expectedRun !== runId) return;
+    try {
+      const runtime = await loadGiftSpecialAnimationRuntime();
+      if (!visible || expectedRun !== runId) return;
+      if (!controller) controller = runtime.create(host);
+      if (!controller) throw new Error("WebGL yüzeyi oluşturulamadı.");
+
+      controller.onComplete = () => {
+        if (!visible || expectedRun !== runId) return;
+        app.classList.remove("is-playing");
+        app.classList.add("is-complete");
+        setStatus("Animasyon tamamlandı · sıradaki hediye bekleniyor");
+        later(() => runCycle(), 1900, expectedRun);
+      };
+
+      app.classList.add("is-playing");
+      cursor.classList.remove("is-visible");
+      setStatus("1.000 jeton eşiği aşıldı · animasyon oynuyor");
+      controller.play({
+        avatar: "/assets/fictional-publisher.webp",
+        displayName: "Lina",
+        total: 1000,
+        duration: 12000,
+        thankYouText: "Teşekkürler!",
+        cardFlightDuration: 6500,
+        style: "pixel-galaxy-heart",
+        speed: 1,
+      });
+    } catch (_) {
+      host.classList.add("is-fallback");
+      setStatus("Özel animasyon önizlemesi");
+      later(() => runCycle(), 4500, expectedRun);
+    }
+  };
+
+  const runCycle = () => {
+    runId += 1;
+    const currentRun = runId;
+    clearTimers();
+    resetVisuals();
+    host.classList.remove("is-fallback");
+
+    if (reduceMotion) {
+      threshold.value = "1000";
+      app.classList.add("has-widget", "has-gift");
+      setStatus("1.000 jeton · özel animasyon hazır");
+      return;
+    }
+
+    moveCursor(preset, 0);
+    later(() => {
+      moveCursor(preset);
+      setStatus("Piksel Kalp Galaksisi seçiliyor");
+    }, 450, currentRun);
+    later(() => {
+      clickCursor();
+      preset.classList.add("active");
+    }, 1320, currentRun);
+    later(() => {
+      moveCursor(threshold);
+      setStatus("Jeton eşiği giriliyor");
+    }, 1900, currentRun);
+    later(() => {
+      clickCursor();
+      thresholdRow?.classList.add("is-focused");
+      threshold.value = "1";
+    }, 2800, currentRun);
+    later(() => { threshold.value = "10"; }, 3030, currentRun);
+    later(() => { threshold.value = "100"; }, 3260, currentRun);
+    later(() => { threshold.value = "1000"; }, 3490, currentRun);
+    later(() => {
+      thresholdRow?.classList.remove("is-focused");
+      moveCursor(addButton);
+      setStatus("Özel animasyon widget'ı ekleniyor");
+    }, 4000, currentRun);
+    later(() => {
+      clickCursor();
+      addButton.classList.add("is-pressed");
+    }, 4850, currentRun);
+    later(() => {
+      addButton.classList.remove("is-pressed");
+      app.classList.add("has-widget");
+      setStatus("Widget hazır · sohbetten hediye bekleniyor");
+    }, 5080, currentRun);
+    later(() => {
+      cursor.classList.remove("is-visible");
+      app.classList.add("has-gift");
+      setStatus("Lina, Disko Topu ×1 gönderdi");
+    }, 6750, currentRun);
+    later(() => playAnimation(currentRun), 7350, currentRun);
+  };
+
+  addButton.addEventListener("click", () => {
+    if (!visible) return;
+    clearTimers();
+    runId += 1;
+    const currentRun = runId;
+    threshold.value = "1000";
+    addButton.classList.add("is-pressed");
+    app.classList.add("has-widget");
+    setStatus("Widget hazır · sohbetten hediye bekleniyor");
+    later(() => {
+      addButton.classList.remove("is-pressed");
+      app.classList.add("has-gift");
+      setStatus("Lina, Disko Topu ×1 gönderdi");
+    }, 1100, currentRun);
+    later(() => playAnimation(currentRun), 1650, currentRun);
+  });
+
+  testButton?.addEventListener("click", () => {
+    if (!visible) return;
+    clearTimers();
+    runId += 1;
+    threshold.value = "1000";
+    app.classList.add("has-widget", "has-gift");
+    playAnimation(runId);
+  });
+
+  const visibilityObserver = new IntersectionObserver(
+    ([entry]) => {
+      const nextVisible = Boolean(entry?.isIntersecting);
+      if (nextVisible === visible) return;
+      visible = nextVisible;
+      if (visible) {
+        loadGiftSpecialAnimationRuntime().catch(() => {});
+        runCycle();
+      } else {
+        runId += 1;
+        clearTimers();
+        controller?.stop?.();
+        cursor.classList.remove("is-visible");
+      }
+    },
+    { threshold: .14 },
+  );
+  visibilityObserver.observe(section);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      runId += 1;
+      clearTimers();
+      controller?.stop?.();
+      return;
+    }
+    if (visible) runCycle();
+  });
+}
+
 hydrateLatestRelease();
 setupNavigation();
 setupHeader();
@@ -339,3 +584,4 @@ setupCopyButtons();
 setupContentProtection();
 setupLowerDemoSpectrum();
 setupShowcaseMusicDemo();
+setupGiftSpecialAnimationDemo();
