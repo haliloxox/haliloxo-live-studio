@@ -15,7 +15,8 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/oxo-logo-512.png" as="image">
-  <link rel="stylesheet" href="/styles.css?v=20260731-4">
+  <link rel="stylesheet" href="/styles.css?v=20260731-5">
+  <link rel="stylesheet" href="/studio-demo.css?v=20260731-1">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
@@ -148,35 +149,255 @@
         <small class="download-note" aria-live="polite" data-download-status>Windows 10 ve 11 · 64-bit</small>
       </aside>
 
-      <figure class="product-film reveal" data-film-shell>
-        <div class="film-chrome" aria-hidden="true">
+      <figure
+        class="product-film studio-showcase reveal"
+        data-studio-demo
+        data-connection="offline"
+        data-panel="connection"
+        data-chat="closed"
+        data-music="stopped"
+        data-voice="idle"
+        data-gift="idle"
+        data-orientation="vertical"
+        data-demo-mode="automatic"
+      >
+        <div class="film-chrome">
           <span></span><span></span><span></span>
           <b>HALİLOXO LIVE STUDIO</b>
-          <em>GERÇEK PROGRAM GÖRÜNTÜSÜ</em>
+          <em>ETKİLEŞİMLİ CANLI DEMO</em>
+          <button type="button" data-demo-replay aria-label="Canlı tanıtımı yeniden başlat">
+            <i aria-hidden="true">↻</i> Yeniden oynat
+          </button>
         </div>
         <div class="film-stage">
-          <video
-            data-product-film
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="/assets/haliloxo-program-poster.webp"
-            aria-label="Haliloxo Live Studio gerçek program tanıtımı"
-          >
-            <source src="/assets/haliloxo-program-tanitim.webm" type="video/webm">
-            <source src="/assets/haliloxo-program-tanitim.mp4" type="video/mp4">
-          </video>
-          <div class="film-fallback" data-film-fallback>
-            <img src="/assets/oxo-logo-512.png" alt="">
-            <p>Gerçek program tanıtımı hazırlanıyor.</p>
+          <div class="studio-demo" data-demo-app>
+            <div class="studio-demo__desktop-glow" aria-hidden="true"></div>
+
+            <section class="studio-demo__settings" aria-label="Haliloxo Live Studio genel ayarları">
+              <header class="studio-demo__settings-header">
+                <div>
+                  <small>GENEL AYARLAR</small>
+                  <strong data-demo-panel-title>TikTok Canlı Bağlantısı</strong>
+                </div>
+                <button type="button" data-demo-close-panel aria-label="Ayarları kapat">×</button>
+              </header>
+
+              <div class="studio-demo__settings-view" data-demo-view="connection">
+                <div class="studio-demo__section-label">YAYINCI BAĞLANTISI</div>
+                <label class="studio-demo__field">
+                  <span>Kullanıcı adı</span>
+                  <input
+                    type="text"
+                    value=""
+                    maxlength="24"
+                    autocomplete="off"
+                    spellcheck="false"
+                    data-demo-username
+                    aria-label="TikTok kullanıcı adı"
+                  >
+                </label>
+                <button class="studio-demo__primary" type="button" data-demo-connect>
+                  <span data-demo-connect-label>Bağlan</span>
+                  <i aria-hidden="true"></i>
+                </button>
+                <div class="studio-demo__connection-card">
+                  <span class="studio-demo__connection-dot"></span>
+                  <div>
+                    <strong data-demo-connection-title>Bağlantı bekleniyor</strong>
+                    <small data-demo-connection-copy>Kullanıcı adını girerek canlı verileri bağla.</small>
+                  </div>
+                </div>
+                <div class="studio-demo__section-label">YAYIN YÜZEYİ</div>
+                <div class="studio-demo__choice-row">
+                  <button type="button" class="is-selected" data-demo-orientation="vertical" aria-pressed="true">Dikey</button>
+                  <button type="button" data-demo-orientation="horizontal" aria-pressed="false">Yatay</button>
+                </div>
+                <div class="studio-demo__setting-row">
+                  <span>Çözünürlük</span><strong>1080 × 1920</strong>
+                </div>
+                <div class="studio-demo__setting-row">
+                  <span>Arka plan</span><strong>Şeffaf</strong>
+                </div>
+              </div>
+
+              <div class="studio-demo__settings-view" data-demo-view="gifts">
+                <div class="studio-demo__section-label">HEDİYE ANİMASYONU</div>
+                <div class="studio-demo__gift-preview" aria-hidden="true">
+                  <span>♥</span>
+                  <i></i><i></i><i></i><i></i>
+                </div>
+                <div class="studio-demo__setting-row">
+                  <span>Özel animasyon</span>
+                  <button class="studio-demo__switch is-on" type="button" data-demo-gift-enabled aria-label="Özel animasyonu aç veya kapat" aria-pressed="true"><i></i></button>
+                </div>
+                <label class="studio-demo__field studio-demo__field--compact">
+                  <span>Kaç jetonda tetiklensin?</span>
+                  <input type="number" value="1000" min="1" data-demo-gift-threshold>
+                </label>
+                <div class="studio-demo__setting-row">
+                  <span>Gösterim süresi</span><strong>5 saniye</strong>
+                </div>
+                <button class="studio-demo__primary" type="button" data-demo-gift-test>
+                  Animasyonu test et
+                </button>
+                <p class="studio-demo__hint">Test, gerçek bir hediye gelmiş gibi sohbeti ve yayın sahnesini birlikte çalıştırır.</p>
+              </div>
+
+              <div class="studio-demo__settings-view" data-demo-view="music">
+                <div class="studio-demo__section-label">MÜZİK</div>
+                <div class="studio-demo__now-playing">
+                  <div class="studio-demo__album">OXO</div>
+                  <div>
+                    <small>ŞİMDİ ÇALIYOR</small>
+                    <strong>Gece Işıkları</strong>
+                    <span>Lina Nova</span>
+                  </div>
+                  <button type="button" data-demo-music-toggle aria-label="Müziği oynat veya duraklat">▶</button>
+                </div>
+                <div class="studio-demo__timeline"><i></i></div>
+                <div class="studio-demo__audio-row">
+                  <span>Yayın sesi</span>
+                  <div class="studio-demo__meter studio-demo__meter--music" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
+                  <b data-demo-music-level>%70</b>
+                </div>
+                <div class="studio-demo__audio-row">
+                  <span>TTS sesi</span>
+                  <div class="studio-demo__meter studio-demo__meter--tts" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
+                  <b data-demo-tts-level>%60</b>
+                </div>
+                <div class="studio-demo__setting-row">
+                  <span>Konuşurken otomatik kıs</span>
+                  <button class="studio-demo__switch is-on" type="button" data-demo-ducking-enabled aria-label="Konuşurken sesleri kıs" aria-pressed="true"><i></i></button>
+                </div>
+                <button class="studio-demo__secondary" type="button" data-demo-voice-test>
+                  Mikrofon konuşmasını dene
+                </button>
+              </div>
+
+              <div class="studio-demo__settings-view" data-demo-view="tts">
+                <div class="studio-demo__section-label">TTS SESLİ OKUMA</div>
+                <div class="studio-demo__setting-row">
+                  <span>Yeni mesajları oku</span>
+                  <button class="studio-demo__switch is-on" type="button" data-demo-tts-enabled aria-label="TTS sesli okumayı aç veya kapat" aria-pressed="true"><i></i></button>
+                </div>
+                <label class="studio-demo__field studio-demo__field--select">
+                  <span>Ses</span>
+                  <select aria-label="TTS sesi">
+                    <option>Türkçe kadın sesi</option>
+                    <option>Türkçe erkek sesi</option>
+                  </select>
+                </label>
+                <div class="studio-demo__setting-row">
+                  <span>Okuma hızı</span><strong>1.0×</strong>
+                </div>
+                <div class="studio-demo__range"><i></i><b></b></div>
+                <div class="studio-demo__setting-row">
+                  <span>@kullanıcı-adı okuma</span>
+                  <button class="studio-demo__switch" type="button" aria-label="Kullanıcı adlarını oku" aria-pressed="false"><i></i></button>
+                </div>
+                <div class="studio-demo__tts-sample">
+                  <span>TR</span>
+                  <p><strong>Deniz diyor ki:</strong> Yayın çok güzel olmuş.</p>
+                </div>
+              </div>
+            </section>
+
+            <nav class="studio-demo__dock" aria-label="Studio demo menüsü">
+              <button type="button" class="is-active" data-demo-panel="connection" aria-label="TikTok canlı bağlantısı"><span>◎</span></button>
+              <button type="button" data-demo-panel="gifts" aria-label="Hediyeler"><span>◇</span></button>
+              <button type="button" data-demo-panel="music" aria-label="Müzik"><span>♫</span></button>
+              <button type="button" data-demo-panel="tts" aria-label="TTS sesli okuma"><span>◖</span></button>
+              <button type="button" data-demo-chat-toggle aria-label="Sohbeti aç veya kapat"><span>▤</span></button>
+            </nav>
+
+            <section class="studio-demo__broadcast" aria-label="Yayın ekranı">
+              <header class="studio-demo__publisher">
+                <div class="studio-demo__publisher-avatar">
+                  <img src="/assets/fictional-publisher.webp" alt="">
+                  <span class="studio-demo__rhythm" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  </span>
+                </div>
+                <div>
+                  <strong data-demo-publisher-name>Haliloxo Live Studio</strong>
+                  <small data-demo-track-name>Çevrim dışı</small>
+                </div>
+              </header>
+
+              <div class="studio-demo__screen">
+                <div class="studio-demo__offline">
+                  <img src="/assets/oxo-logo-192.png" alt="">
+                  <strong>Yayın bağlantısı bekleniyor</strong>
+                  <small>Canlı sahne bağlantıdan sonra açılır.</small>
+                </div>
+                <div class="studio-demo__live-scene">
+                  <div class="studio-demo__streamer-shot"></div>
+                  <div class="studio-demo__gameplay-shot"></div>
+                  <div class="studio-demo__scene-label">
+                    <span>CANLI</span><strong>1080p · 60 FPS</strong>
+                  </div>
+                </div>
+                <div class="studio-demo__gift-effect" aria-hidden="true">
+                  <div class="studio-demo__gift-orb">♥</div>
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                  <strong>ÖZEL HEDİYE</strong>
+                  <span data-demo-gift-user>Selin'den 1.000 jeton</span>
+                </div>
+                <div class="studio-demo__voice-badge">
+                  <span></span>
+                  <div><strong>Yayıncı konuşuyor</strong><small>Müzik ve TTS kısılıyor</small></div>
+                </div>
+              </div>
+            </section>
+
+            <aside class="studio-demo__social" aria-label="Canlı sohbet">
+              <div class="studio-demo__active-users">
+                <div class="studio-demo__active-heading">
+                  <span>AKTİF İZLEYİCİLER</span><strong data-demo-viewer-count>0 kişi</strong>
+                </div>
+                <div class="studio-demo__active-list">
+                  <button type="button" class="studio-demo__profile studio-demo__profile--1" aria-label="Selin"><b>1</b></button>
+                  <button type="button" class="studio-demo__profile studio-demo__profile--2" aria-label="Deniz"><b>2</b></button>
+                  <button type="button" class="studio-demo__profile studio-demo__profile--3" aria-label="Mert"><b>3</b></button>
+                  <button type="button" class="studio-demo__profile studio-demo__profile--4" aria-label="Efe"><b>4</b></button>
+                  <button type="button" class="studio-demo__profile studio-demo__profile--5" aria-label="Ada"><b>5</b></button>
+                  <button type="button" class="studio-demo__profile studio-demo__profile--6" aria-label="Bora"><b>6</b></button>
+                </div>
+              </div>
+
+              <div class="studio-demo__chat">
+                <header>
+                  <div><span class="studio-demo__live-dot"></span><strong>SOHBET</strong></div>
+                  <small>canlı</small>
+                </header>
+                <div class="studio-demo__messages" data-demo-messages>
+                  <div class="studio-demo__chat-empty">
+                    <span>▤</span>
+                    <strong>Sohbet hazır</strong>
+                    <small>Bağlandıktan sonra yeni mesajlar burada görünür.</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="studio-demo__quick-controls">
+                <button type="button" data-demo-chat-toggle aria-label="Sohbeti aç veya kapat">▤</button>
+                <button type="button" class="is-on" data-demo-tts-quick aria-label="TTS açık" aria-pressed="true">◖</button>
+              </div>
+            </aside>
+
+            <div class="studio-demo__status" data-demo-status aria-live="polite">
+              Canlı demoya dokunabilir veya otomatik akışı izleyebilirsin.
+            </div>
           </div>
         </div>
         <figcaption>
           <span>01</span>
-          <p><strong>Program nasılsa, burada da öyle.</strong> Bağlantıdan sohbete, hediyeden müziğe kadar gerçek çalışma akışı.</p>
-          <small>Otomatik oynatılır · Sessiz tanıtım</small>
+          <p><strong>Program burada gerçekten çalışıyor.</strong> Kullanıcı adını yaz, düğmelere bas; sohbeti, hediyeyi, müziği ve TTS davranışını canlı dene.</p>
+          <small>Gerçek HTML arayüzü · Etkileşimli</small>
         </figcaption>
       </figure>
     </section>
@@ -342,6 +563,7 @@
     </div>
   </footer>
 
-  <script src="/site.js?v=20260731-3" defer></script>
+  <script src="/site.js?v=20260731-4" defer></script>
+  <script src="/studio-demo.js?v=20260731-1" defer></script>
 </body>
 </html>
