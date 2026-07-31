@@ -726,6 +726,12 @@
   addEventListener("pagehide", () => {
     clearTransientTimers();
     clearTimer(statusTimer);
+    if (state.connection === "connecting") state.connection = "offline";
+    if (state.voice === "speaking") state.voice = "idle";
+    render();
+  });
+  addEventListener("pageshow", () => {
+    syncActivity();
   });
 
   const onReducedMotionChange = () => {
