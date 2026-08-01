@@ -3,7 +3,7 @@
 const releaseEndpoint =
   "https://api.github.com/repos/haliloxox/haliloxostudio/releases/latest";
 const fallbackDownload =
-  "https://github.com/haliloxox/haliloxostudio/releases/download/v1.0.12/Haliloxo-Live-Studio-Setup-1.0.12.exe";
+  "https://github.com/haliloxox/haliloxostudio/releases/latest/download/Haliloxo-Kurulum-Baslaticisi.exe";
 let resolvedInstallerUrl = fallbackDownload;
 
 const formatMegabytes = (bytes) => `${Math.round(bytes / 1024 / 1024)} MB`;
@@ -17,15 +17,13 @@ async function hydrateLatestRelease() {
     if (!response.ok) throw new Error(`GitHub ${response.status}`);
 
     const release = await response.json();
-    const installer = (release.assets || []).find(
-      (asset) =>
-        /\.exe$/i.test(asset.name || "") &&
-        !/\.blockmap$/i.test(asset.name || ""),
+    const installer = (release.assets || []).find((asset) =>
+      /^Haliloxo-Kurulum-Baslaticisi\.exe$/i.test(asset.name || ""),
     );
     if (!installer?.browser_download_url) return;
 
     resolvedInstallerUrl = installer.browser_download_url;
-    const version = String(release.tag_name || "v1.0.12");
+    const version = String(release.tag_name || "Güncel sürüm");
 
     document.querySelectorAll("[data-version]").forEach((node) => {
       node.textContent = version;
