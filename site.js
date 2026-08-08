@@ -4,6 +4,8 @@ const releaseEndpoint =
   "https://api.github.com/repos/haliloxox/haliloxostudio/releases/latest";
 const installerAssetPattern =
   /^(?:Haliloxo-Kurulum-Baslaticisi|Haliloxo-Live-Studio-Setup-[\w.-]+)\.exe$/i;
+const mobileCaptureDownloadUrl =
+  "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.0.0/Haliloxo-Mobile-Capture-1.0.0.apk";
 let resolvedInstallerUrl = "";
 let installerReady = null;
 
@@ -69,6 +71,31 @@ function setupInstallerDownload() {
 
       setTimeout(() => downloadFrame.remove(), 60_000);
       setTimeout(() => {
+        busy = false;
+        trigger.removeAttribute("aria-busy");
+      }, 1_200);
+    });
+  });
+}
+
+function setupMobileCaptureDownload() {
+  document.querySelectorAll("[data-mobile-capture-download]").forEach((trigger) => {
+    let busy = false;
+
+    trigger.addEventListener("click", () => {
+      if (busy) return;
+      busy = true;
+      trigger.setAttribute("aria-busy", "true");
+
+      const downloadLink = document.createElement("a");
+      downloadLink.href = mobileCaptureDownloadUrl;
+      downloadLink.download = "Haliloxo-Mobile-Capture-1.0.0.apk";
+      downloadLink.rel = "noopener";
+      document.body.append(downloadLink);
+      downloadLink.click();
+      downloadLink.remove();
+
+      window.setTimeout(() => {
         busy = false;
         trigger.removeAttribute("aria-busy");
       }, 1_200);
@@ -184,6 +211,7 @@ function setupContentProtection() {
 
 installerReady = hydrateLatestRelease();
 setupInstallerDownload();
+setupMobileCaptureDownload();
 setupNavigation();
 setupHeader();
 setupReveal();
