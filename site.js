@@ -2,9 +2,10 @@
 
 const releaseEndpoint =
   "https://api.github.com/repos/haliloxox/haliloxostudio/releases/latest";
-const fallbackDownload =
-  "https://github.com/haliloxox/haliloxostudio/releases/latest/download/Haliloxo-Kurulum-Baslaticisi.exe";
-let resolvedInstallerUrl = fallbackDownload;
+const installerAssetPattern =
+  /^(?:Haliloxo-Kurulum-Baslaticisi|Haliloxo-Live-Studio-Setup-[\w.-]+)\.exe$/i;
+let resolvedInstallerUrl = "";
+let installerReady = null;
 
 const formatMegabytes = (bytes) => `${Math.round(bytes / 1024 / 1024)} MB`;
 
@@ -18,9 +19,11 @@ async function hydrateLatestRelease() {
 
     const release = await response.json();
     const installer = (release.assets || []).find((asset) =>
-      /^Haliloxo-Kurulum-Baslaticisi\.exe$/i.test(asset.name || ""),
+      installerAssetPattern.test(asset.name || ""),
     );
-    if (!installer?.browser_download_url) return;
+    if (!installer?.browser_download_url) {
+      throw new Error("Yayınlanan sürümde Windows kurulum dosyası bulunamadı.");
+    }
 
     resolvedInstallerUrl = installer.browser_download_url;
     const version = String(release.tag_name || "Güncel sürüm");
@@ -31,8 +34,10 @@ async function hydrateLatestRelease() {
     document.querySelectorAll("[data-file-size]").forEach((node) => {
       node.textContent = formatMegabytes(installer.size);
     });
+    return resolvedInstallerUrl;
   } catch (_) {
-    // GitHub API geçici olarak kullanılamazsa bilinen son kurulum dosyası kullanılır.
+    // İndirme düğmesi başarısız bir eski dosya adına yönlenmesin.
+    return "";
   }
 }
 
@@ -40,19 +45,26 @@ function setupInstallerDownload() {
   document.querySelectorAll("[data-installer-download]").forEach((trigger) => {
     let busy = false;
 
-    trigger.addEventListener("click", (event) => {
+    trigger.addEventListener("click", async (event) => {
       event.preventDefault();
       if (busy) return;
 
       busy = true;
       trigger.setAttribute("aria-busy", "true");
 
+      await installerReady;
+      if (!resolvedInstallerUrl) {
+        // /indir kendi alan adımızdaki güvenli yedek indirme yönlendirmesidir.
+        location.assign("/indir");
+        return;
+      }
+
       const downloadFrame = document.createElement("iframe");
       downloadFrame.hidden = true;
       downloadFrame.setAttribute("aria-hidden", "true");
       downloadFrame.referrerPolicy = "no-referrer";
       downloadFrame.title = "Haliloxo Live Studio kurulum indirmesi";
-      downloadFrame.src = resolvedInstallerUrl || fallbackDownload;
+      downloadFrame.src = resolvedInstallerUrl;
       document.body.append(downloadFrame);
 
       setTimeout(() => downloadFrame.remove(), 60_000);
@@ -170,7 +182,7 @@ function setupContentProtection() {
   );
 }
 
-hydrateLatestRelease();
+installerReady = hydrateLatestRelease();
 setupInstallerDownload();
 setupNavigation();
 setupHeader();

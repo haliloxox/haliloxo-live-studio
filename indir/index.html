@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07101f">
+  <title>İndirme hazırlanıyor | Haliloxo Live Studio</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #07101f; color: #f5f8ff; font: 500 16px system-ui, sans-serif; }
+    main { text-align: center; max-width: 32rem; padding: 2rem; }
+    p { color: #aab6d2; line-height: 1.55; }
+    a { color: #80b7ff; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>İndirme hazırlanıyor</h1>
+    <p id="status">En güncel Windows kurulum dosyası bulunuyor…</p>
+    <p><a href="/">Ana sayfaya dön</a></p>
+  </main>
+  <script>
+    "use strict";
+    const endpoint = "https://api.github.com/repos/haliloxox/haliloxostudio/releases/latest";
+    const pattern = /^(?:Haliloxo-Kurulum-Baslaticisi|Haliloxo-Live-Studio-Setup-[\w.-]+)\.exe$/i;
+    const status = document.querySelector("#status");
+    fetch(endpoint, { cache: "no-store", headers: { Accept: "application/vnd.github+json" } })
+      .then((response) => {
+        if (!response.ok) throw new Error(String(response.status));
+        return response.json();
+      })
+      .then((release) => {
+        const installer = (release.assets || []).find((asset) => pattern.test(asset.name || ""));
+        if (!installer || !installer.browser_download_url) throw new Error("asset");
+        status.textContent = "Kurulum dosyası indiriliyor…";
+        location.replace(installer.browser_download_url);
+      })
+      .catch(() => {
+        status.textContent = "Kurulum dosyası şu anda hazırlanamadı. Biraz sonra tekrar deneyin.";
+      });
+  </script>
+</body>
+</html>
