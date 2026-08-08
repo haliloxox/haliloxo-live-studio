@@ -1,7 +1,7 @@
 {
-  "versionCode": 1,
-  "versionName": "1.0.0",
-  "apkUrl": "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.0.0/Haliloxo-Mobile-Capture-1.0.0.apk",
-  "sha256": "e8d618ca5fedc2e8af4881a892ab73ed6f6621038db592ae48c7bbffbee91c4a",
-  "notes": "İlk kararlı sürüm."
+  "versionCode": 2,
+  "versionName": "1.1.0",
+  "apkUrl": "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.1.0/Haliloxo-Mobile-Capture-1.1.0.apk",
+  "sha256": "7363b9ca9466ce66cdc1cb950d4a31429e92fcac9a35d311f6c7fdb34d3a2901",
+  "notes": "QR ile eşleştirme, güvenli ekran/kamera kalite seçimi ve uygulama içi güncelleme altyapısı."
 }
