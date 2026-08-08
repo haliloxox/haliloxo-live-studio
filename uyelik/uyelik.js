@@ -87,9 +87,7 @@ const renderMembership = (member) => {
   }
 
   const active = membershipIsActive(member);
-  const planName = active
-    ? String(member.paketAdi || "Premium").toLocaleUpperCase("tr-TR")
-    : "Ücretsiz";
+  const planName = active ? "Oyun erişimi" : "Ücretsiz";
   elements.plan.textContent = planName;
   elements.planBadge.textContent = active ? "ETKİN" : "FREE";
   elements.planBadge.dataset.tier = active ? "premium" : "free";
@@ -100,7 +98,7 @@ const renderMembership = (member) => {
     ? `@${String(member.tiktokKullaniciAdi).replace(/^@+/, "")}`
     : "Bağlanmadı";
   elements.note.innerHTML = active
-    ? "<strong>Lisansın etkin.</strong><span>Lisans ve paket değişiklikleri güvenli sunucu işlemleriyle korunur.</span>"
+    ? "<strong>Oyun erişimin etkin.</strong><span>Lisans ve paket değişiklikleri güvenli sunucu işlemleriyle korunur.</span>"
     : "<strong>Ücretsiz kullanım etkin.</strong><span>Satın alma sistemi açıldığında paket bilgisi bu alanda otomatik güncellenir.</span>";
 };
 
