@@ -5,7 +5,7 @@ const releaseEndpoint =
 const installerAssetPattern =
   /^(?:Haliloxo-Kurulum-Baslaticisi|Haliloxo-Live-Studio-Setup-[\w.-]+)\.exe$/i;
 const mobileCaptureDownloadUrl =
-  "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.4.1/Haliloxo-Mobile-Capture-1.4.1.apk";
+  "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.5.0/Haliloxo-Mobile-Capture-1.5.0.apk";
 let resolvedInstallerUrl = "";
 let installerReady = null;
 
