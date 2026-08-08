@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#070910">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Üyeliğim | Haliloxo Live Studio</title>
+  <link rel="icon" href="/assets/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/uyelik/uyelik.css?v=1">
+</head>
+<body>
+  <main class="member-shell">
+    <a class="brand" href="/" aria-label="Haliloxo Live Studio ana sayfa">
+      <img src="/assets/oxo-logo-192.png" width="48" height="48" alt="">
+      <span><strong>Haliloxo</strong><small>Live Studio</small></span>
+    </a>
+
+    <section class="member-card" aria-labelledby="member-title">
+      <div class="member-card__glow" aria-hidden="true"></div>
+      <header class="member-card__header">
+        <p>HESABIM</p>
+        <h1 id="member-title">Üyeliğim</h1>
+        <span class="connection-status" data-status role="status">Güvenli bağlantı hazırlanıyor</span>
+      </header>
+
+      <section class="sign-in-view" data-signed-out>
+        <div class="illustration" aria-hidden="true"><span></span><i></i><b></b></div>
+        <h2>Hesabınla devam et</h2>
+        <p>Programda kullandığın Google hesabıyla giriş yap. Yalnızca kendi üyelik ve lisans bilgilerini görebilirsin.</p>
+        <button class="google-button" type="button" data-sign-in>
+          <span aria-hidden="true">G</span>
+          Google ile giriş yap
+        </button>
+        <small>Ödeme, paket değiştirme ve lisans işlemleri bu sayfadan yapılamaz.</small>
+      </section>
+
+      <section class="member-view" data-signed-in hidden>
+        <div class="member-profile">
+          <img data-avatar src="/assets/oxo-logo-192.png" width="72" height="72" alt="Profil resmi">
+          <div>
+            <strong data-name>Yükleniyor</strong>
+            <span data-email></span>
+          </div>
+          <button class="sign-out" type="button" data-sign-out>Çıkış yap</button>
+        </div>
+
+        <div class="membership-summary">
+          <div>
+            <span>PAKET</span>
+            <strong data-plan>Kontrol ediliyor</strong>
+          </div>
+          <span class="plan-badge" data-plan-badge>...</span>
+        </div>
+
+        <dl class="membership-data">
+          <div>
+            <dt>Lisans durumu</dt>
+            <dd data-license-status>Kontrol ediliyor</dd>
+          </div>
+          <div>
+            <dt>Geçerlilik</dt>
+            <dd data-license-end>—</dd>
+          </div>
+          <div>
+            <dt>Bağlı TikTok hesabı</dt>
+            <dd data-tiktok>—</dd>
+          </div>
+        </dl>
+
+        <aside class="notice" data-membership-note>
+          <strong>Hesabın korunuyor.</strong>
+          <span>Paket ve lisans bilgileri güvenli sunucu işlemleri ile yönetilir.</span>
+        </aside>
+
+        <a class="download-link" href="/">Haliloxo Live Studio’yu aç veya indir <span aria-hidden="true">→</span></a>
+      </section>
+
+      <p class="member-error" data-error role="alert" hidden></p>
+    </section>
+
+    <footer>
+      <a href="/gizlilik-politikasi/">Gizlilik Politikası</a>
+      <a href="/hizmet-sartlari/">Hizmet Şartları</a>
+    </footer>
+  </main>
+
+  <script type="module" src="/uyelik/uyelik.js?v=1"></script>
+</body>
+</html>
