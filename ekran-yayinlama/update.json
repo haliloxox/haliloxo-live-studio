@@ -1,7 +1,7 @@
 {
-  "versionCode": 4,
-  "versionName": "1.3.0",
-  "apkUrl": "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.3.0/Haliloxo-Mobile-Capture-1.3.0.apk",
-  "sha256": "eed725f34d2cfb8e6d5a5631a58275752e181e2a6a8df7e1ca256e7f486b7bd3",
-  "notes": "İzinleri bir kez hazırlayın; masaüstünden ekran veya kamera eklenince telefon kaynağı otomatik başlatır."
+  "versionCode": 5,
+  "versionName": "1.4.0",
+  "apkUrl": "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.4.0/Haliloxo-Mobile-Capture-1.4.0.apk",
+  "sha256": "676690753a9348c9cb07b735ccadf898af91d321b53a2e246503623ddab25658",
+  "notes": "Güncelleme dosyası indirildikten sonra doğrulanır; gerekli Android kurulum izni açılır ve sistem kurulum ekranına geçilir."
 }
