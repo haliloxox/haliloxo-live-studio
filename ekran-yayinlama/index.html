@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Haliloxo Mobile Capture indiriliyor</title>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #07111f; color: #eef7ff; }
+      main { max-width: 390px; padding: 28px; text-align: center; }
+      h1 { font-size: 22px; margin: 0 0 10px; }
+      p { color: #b7cce0; line-height: 1.55; }
+      button { border: 0; border-radius: 10px; padding: 11px 16px; cursor: pointer; color: #041321; background: #7bd2ff; font: inherit; font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Haliloxo Mobile Capture indiriliyor</h1>
+      <p>APK indirmeniz birkaç saniye içinde başlamalıdır.</p>
+      <button type="button" id="retry">İndirmeyi yeniden başlat</button>
+    </main>
+    <script>
+      const apkUrl = "https://github.com/haliloxox/haliloxostudio/releases/download/mobile-capture-v1.0.0/Haliloxo-Mobile-Capture-1.0.0.apk";
+      function startDownload() {
+        const frame = document.createElement("iframe");
+        frame.hidden = true;
+        frame.setAttribute("aria-hidden", "true");
+        frame.referrerPolicy = "no-referrer";
+        frame.src = apkUrl;
+        document.body.append(frame);
+        window.setTimeout(() => frame.remove(), 60_000);
+      }
+      document.getElementById("retry").addEventListener("click", startDownload);
+      startDownload();
+    </script>
+  </body>
+</html>

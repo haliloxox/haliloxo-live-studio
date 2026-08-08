@@ -82,18 +82,22 @@ function setupMobileCaptureDownload() {
   document.querySelectorAll("[data-mobile-capture-download]").forEach((trigger) => {
     let busy = false;
 
-    trigger.addEventListener("click", () => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
       if (busy) return;
       busy = true;
       trigger.setAttribute("aria-busy", "true");
 
-      const downloadLink = document.createElement("a");
-      downloadLink.href = mobileCaptureDownloadUrl;
-      downloadLink.download = "Haliloxo-Mobile-Capture-1.0.0.apk";
-      downloadLink.rel = "noopener";
-      document.body.append(downloadLink);
-      downloadLink.click();
-      downloadLink.remove();
+      // Cross-origin download attributes are ignored by browsers. A hidden
+      // frame keeps haliloxo.com visible while the APK response starts download.
+      const downloadFrame = document.createElement("iframe");
+      downloadFrame.hidden = true;
+      downloadFrame.setAttribute("aria-hidden", "true");
+      downloadFrame.referrerPolicy = "no-referrer";
+      downloadFrame.title = "Haliloxo Mobile Capture APK indirmesi";
+      downloadFrame.src = mobileCaptureDownloadUrl;
+      document.body.append(downloadFrame);
+      window.setTimeout(() => downloadFrame.remove(), 60_000);
 
       window.setTimeout(() => {
         busy = false;
